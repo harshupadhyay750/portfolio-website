@@ -1,0 +1,148 @@
+# ============================
+# 🚀 FASTAPI CHATBOT BACKEND
+# ============================
+
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+from openai import OpenAI
+import json
+import os
+
+app = FastAPI()
+
+# ✅ Allow frontend (HTML) to connect
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# 🔐 Optional OpenAI (keep fake key if not using)
+client = OpenAI(api_key="sk-xxxxxxxx")
+
+
+# ============================
+# 📂 LOAD RESUME JSON
+# ============================
+
+BASE_DIR = os.path.dirname(__file__)
+file_path = os.path.join(BASE_DIR, "resume_data.json")
+
+with open(file_path, "r", encoding="utf-8") as f:
+    resume = json.load(f)
+
+
+# ============================
+# 🧠 SMART RESPONSE FUNCTION
+# ============================
+
+def smart_response(message: str):
+    msg = message.lower()
+
+    # Greeting
+    if any(word in msg for word in ["hi", "hello", "hey"]):
+        return "Hey 👋 I'm Harsh's AI assistant. Ask me about his skills, projects, or experience!"
+
+    # Name
+    if "name" in msg:
+        return f"My name is {resume['name']}."
+
+    # Education
+    if "education" in msg or "college" in msg:
+        return resume["education"]
+
+    # Skills
+    if "skill" in msg or "tech" in msg:
+        return "Skills:\n" + ", ".join(resume["skills"])
+
+    # Projects
+    if "project" in msg or "work" in msg:
+        return "Projects:\n- " + "\n- ".join(resume["projects"])
+
+    # Experience
+    if "experience" in msg:
+        return resume["experience"]
+
+    # Certifications
+    if "certificate" in msg or "certification" in msg:
+        return "Certifications:\n- " + "\n- ".join(resume["certifications"])
+
+    # Contact
+    if "contact" in msg or "email" in msg:
+        return f"Email: {resume['contact']['email']}\nPhone: {resume['contact']['phone']}"
+
+    if "linkedin" in msg:
+        return resume["contact"]["linkedin"]
+
+    # Location
+    if "location" in msg:
+        return resume["location"]
+
+    # Resume
+    if "resume" in msg or "cv" in msg:
+        return "You can download Harsh's resume from the Resume section."
+
+    # Default smart reply
+    return (
+        "I can help you with:\n\n"
+        "👉 Skills\n"
+        "👉 Projects\n"
+        "👉 Education\n"
+        "👉 Certifications\n"
+        "👉 Contact\n\n"
+        "Try asking something 😊"
+    )
+
+
+# ============================
+# 💬 CHAT API
+# ============================
+
+@app.post("/chat")
+async def chat(request: Request):
+    try:
+        data = await request.json()
+    except:
+        return {"reply": "⚠️ Invalid request"}
+
+    user_message = data.get("message", "").strip()
+
+    if not user_message:
+        return {"reply": "⚠️ Empty message"}
+
+    # 🔥 Try OpenAI (if available)
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {
+                    "role": "system",
+                    "content": f"You are Harsh's portfolio assistant. Answer ONLY using this data: {resume}"
+                },
+                {"role": "user", "content": user_message}
+            ],
+            max_tokens=150
+        )
+
+        reply = response.choices[0].message.content
+
+        if not reply:
+            raise Exception("Empty AI response")
+
+        return {"reply": reply}
+
+    except Exception as e:
+        print("⚠️ OpenAI failed → using fallback:", e)
+
+        return {"reply": smart_response(user_message)}
+
+
+# ============================
+# 🟢 TEST ROUTE
+# ============================
+
+@app.get("/")
+def home():
+    return {"message": "✅ Chatbot backend running!"}

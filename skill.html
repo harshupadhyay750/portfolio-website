@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills | Harsh Upadhyay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --primary-color: #bb86fc;
+            --secondary-color: #03dac6;
+            --text-color: #e0e0e0;
+            --card-bg: #252525;
+            --border-color: #333;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 40px 5%;
+        }
+
+        .skills-page-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+        }
+
+        .skills-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .skills-header h1 {
+            font-family: 'Lora', serif;
+            color: var(--primary-color);
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .skills-header p {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-top: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .skill-category-section {
+            margin-bottom: 60px;
+        }
+
+        .skill-category-section h2 {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .skill-category-section h2 i {
+            margin-right: 15px;
+            color: var(--secondary-color);
+        }
+
+        .skill-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-detail-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-detail-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .skill-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .skill-title i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+
+        .skill-title h3 {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin: 0;
+        }
+        
+        .skill-detail-card h4 {
+            color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .roadmap-list {
+            list-style: none;
+            padding-left: 0;
+            opacity: 0.9;
+        }
+        .roadmap-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 5px;
+        }
+        .roadmap-list li::before {
+            content: '\f058'; /* Font Awesome check icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+        
+        .footer-buttons {
+            text-align: center;
+            padding-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 18px;
+            background-color: transparent;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            border: 2px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+        }
+        
+        .btn.secondary {
+             color: var(--secondary-color);
+             border-color: var(--secondary-color);
+        }
+        
+        .btn.secondary:hover {
+            background-color: var(--secondary-color);
+            color: var(--bg-color);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="skills-page-container">
+        <header class="skills-header">
+            <h1>My Skills & Expertise</h1>
+            <p>A detailed look at the technologies I use to build modern, efficient, and data-driven applications.</p>
+        </header>
+
+        <section class="skill-category-section">
+            <h2><i class="fas fa-code"></i> Frontend Development</h2>
+            <div class="skill-cards-grid">
+                <div class="skill-detail-card">
+                    <div class="skill-title"><i class="fab fa-html5"></i><h3>HTML5</h3></div>
+                    <p>The foundation of all my web projects, used to structure content semantically for accessibility and SEO.</p>
+                    <h4>Learning Roadmap:</h4>
+                    <ul class="roadmap-list">
+                        <li>Basic Tags & Document Structure</li>
+                        <li>Semantic HTML for modern web apps</li>
+                        <li>Forms, Media, and Graphics</li>
+                    </ul>
+                </div>
+                <div class="skill-detail-card">
+                    <div class="skill-title"><i class="fab fa-css3-alt"></i><h3>CSS3</h3></div>
+                    <p>Used to create visually appealing, responsive, and user-friendly layouts with modern techniques like Flexbox and Grid.</p>
+                    <h4>Learning Roadmap:</h4>
+                    <ul class="roadmap-list">
+                        <li>Selectors, Box Model, and Specificity</li>
+                        <li>Flexbox & CSS Grid for Layouts</li>
+                        <li>Responsive Design & Transitions</li>
+                    </ul>
+                </div>
+                <div class="skill-detail-card">
+                    <div class="skill-title"><i class="fab fa-js-square"></i><h3>JavaScript (ES6+)</h3></div>
+                    <p>The core of interactivity in my projects, used for DOM manipulation, API integration, and dynamic user experiences.</p>
+                    <h4>Learning Roadmap:</h4>
+                    <ul class="roadmap-list">
+                        <li>DOM Manipulation & Events</li>
+                        <li>Asynchronous JS (Promises, async/await)</li>
+                        <li>Modern ES6+ Features</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="skill-category-section">
+            <h2><i class="fas fa-cogs"></i> Backend & Data Science</h2>
+            <div class="skill-cards-grid">
+                <div class="skill-detail-card">
+                    <div class="skill-title"><i class="fab fa-python"></i><h3>Python</h3></div>
+                    <p>My primary language for backend logic, data analysis, and machine learning model implementation.</p>
+                    <h4>Learning Roadmap:</h4>
+                    <ul class="roadmap-list">
+                        <li>Core Syntax & Data Structures</li>
+                        <li>Object-Oriented Programming</li>
+                        <li>Libraries: Pandas, NumPy, Scikit-learn</li>
+                    </ul>
+                </div>
+                <div class="skill-detail-card">
+                    <div class="skill-title"><i class="fab fa-java"></i><h3>Java</h3></div>
+                    <p>Utilized for building robust, scalable, and object-oriented backend systems and applications.</p>
+                    <h4>Learning Roadmap:</h4>
+                    <ul class="roadmap-list">
+                        <li>Core OOP Principles</li>
+                        <li>Java Collections Framework</li>
+                        <li>Foundations of Enterprise Apps</li>
+                    </ul>
+                </div>
+                <div class="skill-detail-card">
+                    <div class="skill-title"><i class="fas fa-brain"></i><h3>Machine Learning</h3></div>
+                    <p>I build predictive models to uncover insights from data and create intelligent, data-driven features.</p>
+                    <h4>Learning Roadmap:</h4>
+                    <ul class="roadmap-list">
+                        <li>Supervised & Unsupervised Learning</li>
+                        <li>Model Evaluation & Tuning</li>
+                        <li>Implementation with Scikit-learn</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="skill-category-section">
+            <h2><i class="fas fa-tools"></i> Development Tools</h2>
+            <div class="skill-cards-grid">
+                 <div class="skill-detail-card">
+                    <div class="skill-title"><i class="fab fa-git-alt"></i><h3>Git & GitHub</h3></div>
+                    <p>Essential for version control and collaborative development, allowing me to manage codebases efficiently.</p>
+                    <h4>Learning Roadmap:</h4>
+                    <ul class="roadmap-list">
+                        <li>Basic Commands & Workflow</li>
+                        <li>Branching and Merging Strategies</li>
+                        <li>Collaboration via Pull Requests</li>
+                    </ul>
+                </div>
+                <div class="skill-detail-card">
+                    <div class="skill-title"><i class="fas fa-terminal"></i><h3>VS Code</h3></div>
+                    <p>My primary code editor, customized with extensions for an efficient and productive development workflow.</p>
+                    <h4>Learning Roadmap:</h4>
+                    <ul class="roadmap-list">
+                        <li>Workspace & Project Setup</li>
+                        <li>Debugging & Terminal Integration</li>
+                        <li>Extensions for Productivity</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-buttons">
+            <a href="index.html" class="btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+            <a href="index.html#contact" class="btn secondary"><i class="fas fa-paper-plane"></i> Contact Me</a>
+        </div>
+    </div>
+</body>
+</html>

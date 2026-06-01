@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Harsh Upadhyay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #121212;
+            --primary-color: #bb86fc;
+            --secondary-color: #03dac6;
+            --text-color: #e0e0e0;
+            --text-secondary: #efedda;
+            --card-bg: rgba(26, 26, 26, 0.7);
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .page-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* --- Header & Footer --- */
+        .site-header {
+            position: fixed;
+            width: 100%;
+            top: 0; left: 0;
+            background-color: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 20px 5%;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .site-header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .site-header .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+        .site-header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        .site-header nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .site-header nav a:hover {
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 60px;
+            background: #0a0a0a;
+            border-top: 1px solid var(--border-color);
+        }
+        .social-links { margin-bottom: 1rem; }
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        /* --- Hero Section --- */
+        .about-hero {
+            padding: 180px 5% 100px;
+            text-align: center;
+        }
+        .about-hero h1 {
+            font-family: 'Lora', serif;
+            font-size: 4rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .about-hero p {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- Main Content Section Styling --- */
+        .about-section {
+            padding: 60px 0;
+        }
+        
+        .section-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        
+        .section-header h2 {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .section-header p {
+            color: var(--text-secondary);
+        }
+        .profile-image-container img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            border: 1px solid var(--border-color);
+        }
+
+        /* --- Enhanced Timeline --- */
+        .timeline {
+            position: relative;
+            padding-top: 10px;
+            border-left: 2px solid var(--primary-color);
+        }
+        .timeline-item {
+            position: relative;
+            margin-left: 40px;
+            padding-bottom: 40px;
+        }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-item::before {
+            content: attr(data-icon);
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: -61px;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            border: 2px solid var(--primary-color);
+            color: var(--secondary-color);
+            display: grid;
+            place-items: center;
+            font-size: 1rem;
+        }
+        .timeline h3 {
+            font-size: 1.3rem;
+            color: var(--text-color);
+            margin: 0 0 5px 0;
+            font-weight: 600;
+        }
+        .timeline p { margin: 0; color: var(--text-secondary); font-size: 0.95rem; }
+        .timeline p strong { color: var(--text-color); }
+
+        /* --- Redesigned Skills Section --- */
+        .skills-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+        }
+        .skills-card h4 {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .skills-list li {
+            background-color: #2c2c2c;
+            color: var(--text-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            border: 1px solid #444;
+            transition: all 0.3s ease;
+        }
+        .skills-list li:hover {
+            transform: translateY(-3px);
+            background-color: var(--primary-color);
+            color: #121212;
+        }
+        .skills-list i {
+            color: var(--secondary-color);
+        }
+        .skills-list li:hover i {
+            color: #121212;
+        }
+
+        /* --- AI Chat Widget Styling --- */
+        .ai-chat-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .chat-toggle-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #121212;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chat-toggle-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(3, 218, 198, 0.4);
+        }
+
+        .chat-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 350px;
+            height: 450px;
+            background-color: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform-origin: bottom right;
+        }
+
+        .hidden-chat {
+            opacity: 0;
+            transform: scale(0.1);
+            pointer-events: none;
+        }
+
+        .chat-header {
+            background-color: rgba(18, 18, 18, 0.9);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        .close-btn:hover { color: #ff5252; }
+
+        .chat-messages {
+            flex-grow: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .chat-messages::-webkit-scrollbar { width: 6px; }
+        .chat-messages::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 10px; }
+
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+
+        .ai-message {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-color);
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+        }
+
+        .user-message {
+            background: linear-gradient(135deg, var(--primary-color), #9965f4);
+            color: #121212;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+            font-weight: 500;
+        }
+
+        .chat-input-area {
+            display: flex;
+            padding: 15px;
+            background-color: rgba(18, 18, 18, 0.9);
+            border-top: 1px solid var(--border-color);
+            gap: 10px;
+        }
+
+        .chat-input-area input {
+            flex-grow: 1;
+            background: transparent;
+            border: 1px solid #333;
+            padding: 10px 15px;
+            border-radius: 20px;
+            color: white;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        
+        .chat-input-area input:focus { border-color: var(--secondary-color); }
+
+        .chat-input-area button {
+            background-color: var(--secondary-color);
+            color: #121212;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: grid;
+            place-items: center;
+        }
+        .chat-input-area button:hover { transform: scale(1.1); }
+        
+        /* Animation & Responsiveness */
+        .hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .show { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 992px) {
+            .section-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .profile-image-container {
+                order: -1;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .site-header nav ul { display: none; }
+            .about-hero { padding: 140px 5% 60px; }
+            .about-hero h1 { font-size: 2.8rem; }
+        }
+
+        @media (max-width: 400px) {
+            .chat-window {
+                width: 300px;
+                right: -10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="page-wrapper">
+
+        <header class="site-header">
+            <nav>
+                <a href="index.html" class="logo">Harsh Upadhyay</a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" style="color: var(--primary-color);">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="about-hero hidden">
+                <div class="container">
+                    <h1>About Me</h1>
+                    <p>A B.Tech CSE Data Science student on a mission to build beautiful and impactful digital solutions through web development and machine learning.</p>
+                </div>
+            </section>
+
+            <section class="about-section container">
+                <div class="section-grid">
+                    <div class="section-header hidden">
+                        <h2>My Professional Mission</h2>
+                        <p>As a results-driven student with a strong focus on Data Science, my goal is to blend analytical problem-solving with technology. I specialize in data analysis, machine learning, and web development, turning complex datasets into elegant, user-friendly experiences. I am always eager to contribute to innovative projects that leverage tools like Python and Power BI for impactful decision-making.</p>
+                    </div>
+                    <div class="profile-image-container hidden">
+                        <img src="harsh1.jpg" alt="Harsh Upadhyay">
+                    </div>
+                </div>
+            </section>
+
+            <section class="about-section container">
+                <div class="section-grid">
+                    <div class="section-header hidden">
+                        <h2>My Journey</h2>
+                        <p>Every step in my journey has equipped me with a unique blend of theoretical knowledge and practical skills, preparing me to tackle real-world, data-driven challenges.</p>
+                    </div>
+                    <div class="timeline-container hidden">
+                         <div class="timeline">
+                            <div class="timeline-item" data-icon="&#xf19d;">
+                                <h3>B.Tech CSE (Data Science)</h3>
+                                <p><strong>Dr. A.P.J. Abdul Kalam Technical University (AKTU) / SRMCEM</strong></p>
+                                <p>Building a strong foundation in core CS principles and data analytics.</p>
+                            </div>
+                            <div class="timeline-item" data-icon="&#xf0a3;">
+                                <h3>Certifications</h3>
+                                <p><strong>Data Science & Machine Learning</strong></p>
+                                <p>Certified in Data Science with ML (SRDT), Machine Learning Fundamentals, and Python for Data Analysis.</p>
+                            </div>
+                            <div class="timeline-item" data-icon="&#xf121;">
+                                <h3>Smart India Hackathon 2025</h3>
+                                <p><strong>National-Level Tech Competition</strong></p>
+                                <p>Developed MentEra, a real-world AI career mapping software solution under pressure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about-section container">
+                 <div class="section-grid">
+                     <div class="section-header hidden">
+                        <h2>Skills & Expertise</h2>
+                        <p>I possess a versatile skill set that spans from front-end web design to complex data visualization and machine learning algorithms.</p>
+                    </div>
+                    <div class="skills-container hidden">
+                        <div class="skills-card">
+                            <h4>Technical Arsenal</h4>
+                            <ul class="skills-list">
+                                <li><i class="fab fa-python"></i>Python (Pandas, Matplotlib)</li>
+                                <li><i class="fas fa-brain"></i>Machine Learning</li>
+                                <li><i class="fas fa-chart-bar"></i>Power BI & Tableau</li>
+                                <li><i class="fas fa-database"></i>SQL & DBMS</li>
+                                <li><i class="fab fa-html5"></i>HTML, CSS & JS</li>
+                                <li><i class="fab fa-react"></i>React</li>
+                                <li><i class="fas fa-cloud"></i>Cloud Computing</li>
+                                <li><i class="fas fa-table"></i>Advanced Excel</li>
+                                <li><i class="fas fa-robot"></i>Generative AI</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="social-links">
+                <a href="https://github.com/harshupadhyay750" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/harsh-upadhyay-802049297" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/harsh_upadhyay__" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2026 by Harsh Upadhyay. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <!-- AI Assistant Floating UI -->
+    <div class="ai-chat-widget">
+        <button id="chat-toggle" class="chat-toggle-btn">
+            <i class="fas fa-robot"></i> Ask AI Harsh
+        </button>
+        
+        <div id="chat-window" class="chat-window hidden-chat">
+            <div class="chat-header">
+                <div>
+                    <i class="fas fa-robot" style="color: var(--primary-color); margin-right: 8px;"></i>
+                    <strong>Harsh's AI Clone</strong>
+                </div>
+                <button id="close-chat" class="close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div id="chat-messages" class="chat-messages">
+                <div class="message ai-message">
+                    Hi! I'm Harsh's personal AI. I know all about his Data Science projects, his tech stack, and his resume. What would you like to know?
+                </div>
+            </div>
+            
+            <div class="chat-input-area">
+                <input type="text" id="user-input" placeholder="Ask me about Harsh's skills..." autocomplete="off">
+                <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Particles setup
+        if (document.getElementById('particles-js')) {
+            particlesJS('particles-js', { "particles": { "number": { "value": 40, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.2, "random": true }, "size": { "value": 3, "random": true }, "line_linked": { "enable": false }, "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": false }, "onclick": { "enable": false } } }, "retina_detect": true });
+        }
+        
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+
+        // --- AI Chatbot Logic (Connected to FastAPI) ---
+        const chatToggleBtn = document.getElementById('chat-toggle');
+        const chatWindow = document.getElementById('chat-window');
+        const closeChatBtn = document.getElementById('close-chat');
+        const sendBtn = document.getElementById('send-btn');
+        const userInput = document.getElementById('user-input');
+        const chatMessages = document.getElementById('chat-messages');
+
+        // Toggle Chat Window
+        chatToggleBtn.addEventListener('click', () => {
+            chatWindow.classList.toggle('hidden-chat');
+        });
+
+        closeChatBtn.addEventListener('click', () => {
+            chatWindow.classList.add('hidden-chat');
+        });
+
+        // Handle Sending Messages
+        async function sendMessage() {
+            const text = userInput.value.trim();
+            if (!text) return;
+
+            // Add User Message to UI
+            appendMessage(text, 'user-message');
+            userInput.value = '';
+
+            // Add "Thinking..." indicator
+            const typingDiv = document.createElement('div');
+            typingDiv.classList.add('message', 'ai-message');
+            typingDiv.textContent = "Thinking...";
+            typingDiv.id = "typing-indicator";
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            try {
+                // Connecting to your local FastAPI server
+                const response = await fetch('http://localhost:8000/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: text })
+                });
+
+                const data = await response.json();
+                
+                // Remove indicator and show real AI reply
+                const indicator = document.getElementById('typing-indicator');
+                if(indicator) indicator.remove();
+                appendMessage(data.reply, 'ai-message');
+                
+            } catch (error) {
+                console.error("Error:", error);
+                const indicator = document.getElementById('typing-indicator');
+                if(indicator) indicator.remove();
+                appendMessage("Oops! My backend server isn't running. Please start the Python server to chat!", 'ai-message');
+            }
+        }
+
+        function appendMessage(text, className) {
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('message', className);
+            msgDiv.textContent = text;
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        sendBtn.addEventListener('click', sendMessage);
+    </script>
+</body>
+</html>

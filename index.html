@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Upadhyay | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#home" class="logo">Harsh Upadhyay</a>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div id="particles-js"></div>
+            <div class="hero-text">
+                <h1>Hi, I'm <span class="name">Harsh Upadhyay</span></h1>
+                <p><span id="typed-text"></span></p>
+                <a href="#about" class="btn">Discover More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section id="about" class="hidden">
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="harsh1.jpg" alt="Harsh Upadhyay">
+                </div>
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>
+                        Hello! I'm Harsh, a creative and results-driven student with a deep passion for technology. My goal is to build beautiful, functional, and impactful digital solutions. I specialize in full-stack development and am particularly interested in the fields of machine learning and data analysis.
+                    </p>
+                    <p>
+                        My journey at <strong>Shri Ramswaroop Memorial College of Engineering</strong> and my experience competing in the <strong>Smart India Hackathon</strong> have equipped me with a strong blend of theoretical knowledge and practical skills. I thrive on turning complex challenges into elegant, user-friendly experiences.
+                    </p>
+                    <div class="about-buttons">
+                         <a href="about.html" class="btn">Learn More</a>
+                         <a href="resume.html" class="btn secondary">View Resume</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="hidden">
+            <h2>What I Do</h2>
+            <div class="card-navigation-grid">
+                <div class="nav-card">
+                    <div class="card-content">
+                        <i class="fas fa-code"></i>
+                        <h3>Web Development</h3>
+                        <p>I build responsive, high-performance websites using modern technologies like HTML5, CSS3, and JavaScript.</p>
+                    </div>
+                </div>
+                <div class="nav-card">
+                    <div class="card-content">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Data Analysis</h3>
+                        <p>Using Python libraries like Pandas and NumPy, I analyze complex datasets to extract meaningful insights and trends.</p>
+                    </div>
+                </div>
+                <div class="nav-card">
+                     <div class="card-content">
+                        <i class="fas fa-brain"></i>
+                        <h3>Machine Learning</h3>
+                        <p>I implement machine learning models with Scikit-learn and TensorFlow to create intelligent, data-driven applications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="hidden">
+            <h2>Get In Touch</h2>
+            <p>I'm currently seeking new opportunities and collaborations. My inbox is always open, whether you have a question or just want to say hi, I'll get back to you!</p>
+            <a href="mailto:harshupadhysy750@gmail.com" class="btn">Say Hello <i class="fas fa-paper-plane"></i></a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/harsh-upadhyay-802049297" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/harsh_upadhyay__" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 by Harsh Upadhyay. All rights reserved.</p>
+    </footer>
+
+    <div class="ai-chat-widget">
+        <button id="chat-toggle" class="chat-toggle-btn"><i class="fas fa-robot"></i> AI Assistant</button>
+        <div id="chat-window" class="chat-window hidden-chat" aria-hidden="true">
+            <div class="chat-header">
+                <h3>Portfolio AI</h3>
+                <button id="chat-close" class="close-btn" aria-label="Close chat">&times;</button>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="message ai-message">Hi! Ask me about my skills, projects, or experience.</div>
+            </div>
+            <div class="chat-input-area">
+                <input id="chat-input" type="text" placeholder="Type your question..." aria-label="Chat input">
+                <button id="chat-send" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
+</body>
+</html>

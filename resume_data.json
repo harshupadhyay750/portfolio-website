@@ -1,0 +1,150 @@
+{
+  "personal_info": {
+    "name": "Harsh Upadhyay",
+    "title": "Data Science Student | ML & Web Developer",
+    "location": "Lucknow, Uttar Pradesh, India",
+    "email": "harshupadhyay750@gmail.com",
+    "phone": "9648581101",
+    "linkedin": "https://www.linkedin.com/in/harsh-upadhyay-802049297",
+    "github": "https://github.com/harshupadhyay750"
+  },
+
+  "profile": {
+    "summary": "A passionate B.Tech Computer Science (Data Science) student with strong analytical thinking and development skills. Experienced in building data-driven applications, machine learning models, and full-stack web solutions.",
+    "objective": "To leverage data science and software development skills to build impactful and scalable digital solutions."
+  },
+
+  "education": [
+    {
+      "degree": "B.Tech in Computer Science (Data Science)",
+      "university": "Dr. A.P.J. Abdul Kalam Technical University (AKTU)",
+      "college": "SRMCEM, Lucknow",
+      "cgpa": "7.0",
+      "duration": "2022 - 2026"
+    }
+  ],
+
+  "skills": {
+    "programming": ["Python", "JavaScript", "SQL"],
+    "data_science": ["Pandas", "NumPy", "Matplotlib", "Machine Learning"],
+    "web_development": ["HTML", "CSS", "JavaScript", "React"],
+    "tools": ["Power BI", "Tableau", "Advanced Excel"],
+    "other": ["Cloud Computing", "Generative AI"]
+  },
+
+  "projects": [
+    {
+      "name": "MentEra: AI Career Advisor",
+      "category": "AI / Machine Learning",
+      "tech_stack": ["Python", "Machine Learning", "React", "Node.js"],
+      "description": "Developed an intelligent career recommendation system that maps personalized career paths based on user data.",
+      "features": [
+        "ML-based recommendation engine",
+        "User profiling system",
+        "Career path prediction"
+      ],
+      "impact": "Built during Smart India Hackathon 2025 to solve real-world student career confusion.",
+      "status": "Completed"
+    },
+    {
+      "name": "Café Sales Data Analysis",
+      "category": "Data Analysis",
+      "tech_stack": ["Python", "Pandas", "Matplotlib"],
+      "description": "Performed exploratory data analysis on retail data to derive business insights.",
+      "features": [
+        "Data cleaning",
+        "Trend visualization",
+        "Customer behavior analysis"
+      ],
+      "impact": "Helped understand inventory and sales optimization.",
+      "status": "Completed"
+    },
+    {
+      "name": "Smart Home Analytics System",
+      "category": "IoT + Data",
+      "tech_stack": ["Cloud Computing", "Data Visualization"],
+      "description": "Built a system to monitor and visualize real-time smart home data.",
+      "features": [
+        "Real-time data pipeline",
+        "Dashboard visualization",
+        "Cloud integration"
+      ],
+      "impact": "Bridged hardware and cloud for scalable analytics.",
+      "status": "In Progress"
+    },
+    {
+      "name": "Personal Portfolio Website",
+      "category": "Web Development",
+      "tech_stack": ["HTML", "CSS", "JavaScript"],
+      "description": "Designed and developed a responsive portfolio website with integrated AI chatbot.",
+      "features": [
+        "Modern UI/UX",
+        "Chatbot integration",
+        "Responsive design"
+      ],
+      "impact": "Central hub for showcasing projects and skills.",
+      "status": "Live"
+    }
+  ],
+
+  "experience": [
+    {
+      "role": "Student Developer",
+      "description": "Hands-on experience in building machine learning models, performing data analysis, and developing full-stack web applications.",
+      "skills_used": ["Python", "ML", "Web Dev", "Data Visualization"]
+    }
+  ],
+
+  "certifications": [
+    {
+      "name": "Data Science with Machine Learning",
+      "provider": "SRDT",
+      "year": "2024"
+    },
+    {
+      "name": "Machine Learning Fundamentals",
+      "provider": "Online Certification",
+      "year": "2024"
+    },
+    {
+      "name": "Python for Data Analysis",
+      "provider": "Online Certification",
+      "year": "2023"
+    }
+  ],
+
+  "achievements": [
+    "Participated in Smart India Hackathon 2025",
+    "Built multiple real-world AI and data projects",
+    "Developed a full-stack portfolio with chatbot integration"
+  ],
+
+  "strengths": [
+    "Analytical thinking",
+    "Problem-solving mindset",
+    "Quick learner",
+    "Strong adaptability"
+  ],
+
+  "interests": [
+    "Artificial Intelligence",
+    "Data Science",
+    "Web Development",
+    "Startup Building"
+  ],
+
+  "chatbot_training": {
+    "common_questions": {
+      "who_are_you": "I am Harsh Upadhyay, a Data Science student and developer.",
+      "what_do_you_do": "I build AI-powered applications, analyze data, and develop web solutions.",
+      "what_are_your_skills": "I specialize in Python, Machine Learning, Data Analysis, and Web Development.",
+      "what_projects_have_you_done": "I have built AI systems, data analysis projects, and a portfolio chatbot."
+    },
+
+    "conversation_style": {
+      "tone": "professional + friendly",
+      "response_length": "short to medium",
+      "personality": "helpful, confident, technical"
+    }
+  }
+}
