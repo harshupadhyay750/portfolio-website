@@ -337,13 +337,20 @@
         </header>
 
         <main class="projects-page-container">
-            <header class="projects-header hidden">
+            <header class="projects-header">
                 <h1>My Projects</h1>
                 <p>A showcase of my work where ideas transform into impactful solutions.</p>
             </header>
 
+            <div class="projects-filter-container">
+                <button class="filter-btn active" data-filter="all">All Works</button>
+                <button class="filter-btn" data-filter="ai-ml"><i class="fas fa-brain"></i> AI & ML</button>
+                <button class="filter-btn" data-filter="web-mobile"><i class="fas fa-mobile-alt"></i> Web & Mobile</button>
+                <button class="filter-btn" data-filter="data-analytics"><i class="fas fa-chart-bar"></i> Data Analytics</button>
+            </div>
+
             <div class="projects-list">
-                <div class="project-item hidden">
+                <div class="project-item hidden" data-category="ai-ml">
                     <div class="project-image">
                         <img src="sih2025.png" alt="MentEra Project">
                     </div>
@@ -368,7 +375,7 @@
                     </div>
                 </div>
 
-                <div class="project-item hidden">
+                <div class="project-item hidden" data-category="web-mobile">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600" alt="FitByte Health Diet Analyser">
                     </div>
@@ -393,7 +400,7 @@
                     </div>
                 </div>
                 
-                <div class="project-item hidden">
+                <div class="project-item hidden" data-category="data-analytics">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600" alt="Cafe Sales Data Analysis">
                     </div>
@@ -417,7 +424,7 @@
                     </div>
                 </div>
 
-                <div class="project-item hidden">
+                <div class="project-item hidden" data-category="data-analytics">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&auto=format&fit=crop&w=600" alt="Python Data Analysis Code">
                     </div>
@@ -444,7 +451,7 @@
                     </div>
                 </div>
 
-                <div class="project-item hidden">
+                <div class="project-item hidden" data-category="web-mobile">
                     <div class="project-image">
                         <img src="harsh1.jpg" alt="Harsh Upadhyay - Portfolio Project">
                     </div>

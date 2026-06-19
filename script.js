@@ -277,4 +277,28 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- Projects Category Filtering ---
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    if (filterButtons.length > 0 && projectItems.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const category = button.getAttribute('data-filter');
+
+                projectItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    if (category === 'all' || itemCategory === category) {
+                        item.classList.remove('filtered-out');
+                    } else {
+                        item.classList.add('filtered-out');
+                    }
+                });
+            });
+        });
+    }
 });
