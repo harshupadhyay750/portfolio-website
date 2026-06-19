@@ -154,8 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // EDUCATION
         if (/education|college|aktu|srmcem|school|degree|cgpa|btech|b.tech|university/.test(text)) {
-            return "Harsh is pursuing a B.Tech in Computer Science Engineering (specializing in Data Science) at SRMCEM, AKTU (2022 - 2026) with a CGPA of 7.0.\n\n" +
-                   "He completed his Intermediate education from Radient Central Academy (CBSE) with 64.17% (2022) and his High School education from Anwar Public School with 62.80% (2020).";
+            return "Harsh is pursuing a B.Tech in Computer Science Engineering (specializing in Data Science) at SRMCEM, AKTU (2023 - 2027) with a CGPA of 7.0.\n\n" +
+                   "He completed his Intermediate education from Radient Central Academy (CBSE) with 64.17% (2023) and his High School education from Anwar Public School with 62.80% (2021).";
         }
 
         // CERTIFICATIONS

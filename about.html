@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Harsh Upadhyay</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lora:wght@400;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
@@ -25,7 +28,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
@@ -51,7 +54,7 @@
             position: relative;
             z-index: 2;
         }
-        
+
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -62,13 +65,15 @@
         .site-header {
             position: fixed;
             width: 100%;
-            top: 0; left: 0;
+            top: 0;
+            left: 0;
             background-color: rgba(18, 18, 18, 0.8);
             backdrop-filter: blur(10px);
             z-index: 100;
             padding: 20px 5%;
             border-bottom: 1px solid var(--border-color);
         }
+
         .site-header nav {
             display: flex;
             justify-content: space-between;
@@ -76,23 +81,27 @@
             max-width: 1200px;
             margin: auto;
         }
+
         .site-header .logo {
             font-size: 1.8rem;
             font-weight: 700;
             color: #fff;
             text-decoration: none;
         }
+
         .site-header nav ul {
             list-style: none;
             display: flex;
             gap: 30px;
         }
+
         .site-header nav a {
             text-decoration: none;
             color: var(--text-color);
             font-weight: 600;
             transition: color 0.3s ease;
         }
+
         .site-header nav a:hover {
             color: var(--primary-color);
         }
@@ -104,13 +113,18 @@
             background: #0a0a0a;
             border-top: 1px solid var(--border-color);
         }
-        .social-links { margin-bottom: 1rem; }
+
+        .social-links {
+            margin-bottom: 1rem;
+        }
+
         .social-links a {
             color: var(--text-secondary);
             font-size: 1.5rem;
             margin: 0 1rem;
             transition: color 0.3s ease, transform 0.3s ease;
         }
+
         .social-links a:hover {
             color: var(--primary-color);
             transform: scale(1.2);
@@ -121,12 +135,14 @@
             padding: 180px 5% 100px;
             text-align: center;
         }
+
         .about-hero h1 {
             font-family: 'Lora', serif;
             font-size: 4rem;
             color: #fff;
             margin-bottom: 1rem;
         }
+
         .about-hero p {
             font-size: 1.2rem;
             color: var(--primary-color);
@@ -138,27 +154,29 @@
         .about-section {
             padding: 60px 0;
         }
-        
+
         .section-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 5rem;
             align-items: center;
         }
-        
+
         .section-header h2 {
             font-family: 'Lora', serif;
             font-size: 2.5rem;
             color: #fff;
             margin-bottom: 1rem;
         }
+
         .section-header p {
             color: var(--text-secondary);
         }
+
         .profile-image-container img {
             width: 100%;
             border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
             border: 1px solid var(--border-color);
         }
 
@@ -168,12 +186,17 @@
             padding-top: 10px;
             border-left: 2px solid var(--primary-color);
         }
+
         .timeline-item {
             position: relative;
             margin-left: 40px;
             padding-bottom: 40px;
         }
-        .timeline-item:last-child { padding-bottom: 0; }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
         .timeline-item::before {
             content: attr(data-icon);
             font-family: "Font Awesome 6 Free";
@@ -191,14 +214,23 @@
             place-items: center;
             font-size: 1rem;
         }
+
         .timeline h3 {
             font-size: 1.3rem;
             color: var(--text-color);
             margin: 0 0 5px 0;
             font-weight: 600;
         }
-        .timeline p { margin: 0; color: var(--text-secondary); font-size: 0.95rem; }
-        .timeline p strong { color: var(--text-color); }
+
+        .timeline p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .timeline p strong {
+            color: var(--text-color);
+        }
 
         /* --- Redesigned Skills Section --- */
         .skills-card {
@@ -207,12 +239,14 @@
             border-radius: 15px;
             border: 1px solid var(--border-color);
         }
+
         .skills-card h4 {
             font-size: 1.2rem;
             color: var(--secondary-color);
             margin-bottom: 20px;
             font-weight: 600;
         }
+
         .skills-list {
             list-style: none;
             padding: 0;
@@ -220,6 +254,7 @@
             flex-wrap: wrap;
             gap: 12px;
         }
+
         .skills-list li {
             background-color: #2c2c2c;
             color: var(--text-color);
@@ -233,45 +268,63 @@
             border: 1px solid #444;
             transition: all 0.3s ease;
         }
+
         .skills-list li:hover {
             transform: translateY(-3px);
             background-color: var(--primary-color);
             color: #121212;
         }
+
         .skills-list i {
             color: var(--secondary-color);
         }
+
         .skills-list li:hover i {
             color: #121212;
         }
-        
+
         /* Animation & Responsiveness */
         .hidden {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        .show { opacity: 1; transform: translateY(0); }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         @media (max-width: 992px) {
             .section-grid {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
+
             .profile-image-container {
-                order: -1; /* Puts image on top on mobile */
+                order: -1;
+                /* Puts image on top on mobile */
                 max-width: 400px;
                 margin: 0 auto;
             }
         }
-        
+
         @media (max-width: 768px) {
-            .site-header nav ul { display: none; }
-            .about-hero { padding: 140px 5% 60px; }
-            .about-hero h1 { font-size: 2.8rem; }
+            .site-header nav ul {
+                display: none;
+            }
+
+            .about-hero {
+                padding: 140px 5% 60px;
+            }
+
+            .about-hero h1 {
+                font-size: 2.8rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <div id="particles-js"></div>
     <div class="page-wrapper">
@@ -292,7 +345,8 @@
             <section class="about-hero hidden">
                 <div class="container">
                     <h1>About Me</h1>
-                    <p>A passionate developer and data analyst on a mission to build beautiful and impactful digital solutions.</p>
+                    <p>A passionate developer and data analyst on a mission to build beautiful and impactful digital
+                        solutions.</p>
                 </div>
             </section>
 
@@ -300,7 +354,10 @@
                 <div class="section-grid">
                     <div class="section-header hidden">
                         <h2>My Professional Mission</h2>
-                        <p>As a results-driven student, my goal is to blend creativity with technology. I specialize in full-stack development, turning complex challenges into elegant, user-friendly experiences. My core interest lies in machine learning and data analysis, and I am always eager to contribute to innovative projects that leverage data for impactful decision-making.</p>
+                        <p>As a results-driven student, my goal is to blend creativity with technology. I specialize in
+                            full-stack development, turning complex challenges into elegant, user-friendly experiences.
+                            My core interest lies in machine learning and data analysis, and I am always eager to
+                            contribute to innovative projects that leverage data for impactful decision-making.</p>
                     </div>
                     <div class="profile-image-container hidden">
                         <img src="harsh1.jpg" alt="Harsh Upadhyay">
@@ -312,30 +369,33 @@
                 <div class="section-grid">
                     <div class="section-header hidden">
                         <h2>My Journey</h2>
-                        <p>Every step in my journey has equipped me with a unique blend of theoretical knowledge and practical skills, preparing me to tackle real-world challenges.</p>
+                        <p>Every step in my journey has equipped me with a unique blend of theoretical knowledge and
+                            practical skills, preparing me to tackle real-world challenges.</p>
                     </div>
                     <div class="timeline-container hidden">
-                         <div class="timeline">
+                        <div class="timeline">
                             <div class="timeline-item" data-icon="&#xf19d;">
                                 <h3>B.Tech in Computer Science (Data Science)</h3>
                                 <p><strong>Shri Ramswaroop Memorial College of Engineering (SRMCEM, AKTU)</strong></p>
-                                <p>CGPA: 7.0 | Duration: 2022 - 2026</p>
-                                <p>Building a strong foundation in core CS principles, machine learning, and data analytics.</p>
+                                <p>CGPA: 7.0 | Duration: 2023 - 2027</p>
+                                <p>Building a strong foundation in core CS principles, machine learning, and data
+                                    analytics.</p>
                             </div>
                             <div class="timeline-item" data-icon="&#xf19d;">
                                 <h3>Intermediate (CBSE)</h3>
                                 <p><strong>Radient Central Academy, Jalalpur</strong></p>
-                                <p>Percentage: 64.17% | Completed: 2022</p>
+                                <p>Percentage: 64.17% | Completed: 2023</p>
                             </div>
                             <div class="timeline-item" data-icon="&#xf19d;">
                                 <h3>High School</h3>
                                 <p><strong>Anwar Public School</strong></p>
-                                <p>Percentage: 62.80% | Completed: 2020</p>
+                                <p>Percentage: 62.80% | Completed: 2021</p>
                             </div>
                             <div class="timeline-item" data-icon="&#xf121;">
                                 <h3>Smart India Hackathon 2025</h3>
                                 <p><strong>National-Level Tech Competition</strong></p>
-                                <p>Developed MentEra (AI Career Advisor) under pressure in a collaborative environment.</p>
+                                <p>Developed MentEra (AI Career Advisor) under pressure in a collaborative environment.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -343,10 +403,11 @@
             </section>
 
             <section class="about-section container">
-                 <div class="section-grid">
-                     <div class="section-header hidden">
+                <div class="section-grid">
+                    <div class="section-header hidden">
                         <h2>Skills & Expertise</h2>
-                        <p>I possess a versatile skill set that spans from front-end design to back-end logic and data-driven intelligence.</p>
+                        <p>I possess a versatile skill set that spans from front-end design to back-end logic and
+                            data-driven intelligence.</p>
                     </div>
                     <div class="skills-container hidden">
                         <div class="skills-card">
@@ -367,12 +428,15 @@
                 </div>
             </section>
         </main>
-        
+
         <footer>
             <div class="social-links">
-                <a href="https://github.com/harshupadhyay750" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/harsh-upadhyay-802049297" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/harsh_upadhyay__" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/harshupadhyay750" target="_blank" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/harsh-upadhyay-802049297" target="_blank" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/harsh_upadhyay__" target="_blank" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
             </div>
             <p>&copy; 2026 by Harsh Upadhyay. All rights reserved.</p>
         </footer>
@@ -395,7 +459,8 @@
                 </button>
             </div>
             <div id="chat-messages" class="chat-messages">
-                <div class="message ai-message">Hi! I'm Harsh's personal AI clone. Ask me about my projects, skills, certifications, or contact info.</div>
+                <div class="message ai-message">Hi! I'm Harsh's personal AI clone. Ask me about my projects, skills,
+                    certifications, or contact info.</div>
             </div>
             <div class="suggestion-chips-container">
                 <div class="suggestion-chips-title">Suggested Topics</div>
@@ -420,4 +485,5 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
