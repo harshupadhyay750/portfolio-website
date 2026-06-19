@@ -8,14 +8,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         :root {
-            --bg-color: #121212;
-            --primary-color: #bb86fc;
-            --secondary-color: #03dac6;
+            --bg-color: #0a0a0a;
+            --primary-color: #9d5dff;
+            --secondary-color: #00f5c9;
             --text-color: #e0e0e0;
             --text-secondary: #a0a0a0;
-            --card-bg: rgba(26, 26, 26, 0.7);
+            --card-bg: rgba(26, 26, 26, 0.5);
             --border-color: rgba(255, 255, 255, 0.1);
         }
         
@@ -319,31 +320,54 @@
         
         <footer>
             <div class="social-links">
-                <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/harshupadhyay750" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/harsh-upadhyay-802049297" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://www.instagram.com/harsh_upadhyay__" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
-            <p>&copy; 2025 by Harsh Upadhyay. All rights reserved.</p>
+            <p>&copy; 2026 by Harsh Upadhyay. All rights reserved.</p>
         </footer>
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        if (document.getElementById('particles-js')) {
-            particlesJS('particles-js', { "particles": { "number": { "value": 40, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.2, "random": true }, "size": { "value": 3, "random": true }, "line_linked": { "enable": false }, "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false, "out_mode": "out" } } });
-        }
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        }, { threshold: 0.1 });
+    <!-- AI Assistant Floating UI -->
+    <div class="ai-chat-widget">
+        <button id="chat-toggle" class="chat-toggle-btn">
+            <i class="fas fa-robot"></i> Ask AI Harsh
+        </button>
+        <div id="chat-window" class="chat-window hidden-chat" aria-hidden="true">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <i class="fas fa-robot"></i>
+                    <strong>Harsh's AI Clone</strong>
+                </div>
+                <button id="chat-close" class="close-btn" aria-label="Close chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="message ai-message">Hi! I'm Harsh's personal AI clone. Ask me about my projects, skills, certifications, or contact info.</div>
+            </div>
+            <div class="suggestion-chips-container">
+                <div class="suggestion-chips-title">Suggested Topics</div>
+                <div class="suggestion-chips">
+                    <button class="chip" data-query="Tell me about FitByte project">FitByte App</button>
+                    <button class="chip" data-query="What is the MentEra Career Advisor?">MentEra AI</button>
+                    <button class="chip" data-query="What skills do you have?">Technical Skills</button>
+                    <button class="chip" data-query="Show me your certifications">Certifications</button>
+                    <button class="chip" data-query="How can I contact you?">Contact Info</button>
+                    <button class="chip" data-query="Tell me about your education">Education</button>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input id="chat-input" type="text" placeholder="Ask me something..." aria-label="Chat input">
+                <button id="chat-send" aria-label="Send message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
-        const hiddenElements = document.querySelectorAll('.hidden');
-        hiddenElements.forEach((el) => observer.observe(el));
-    </script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

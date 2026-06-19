@@ -4,381 +4,580 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume | Harsh Upadhyay</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+    <link rel="stylesheet" href="style.css">
     <style>
         :root {
-            --bg: #121212;
-            --primary: #bb86fc;
-            --secondary: #03dac6;
-            --text: #e0e0e0;
-            --card: rgba(26,26,26,0.7);
-            --text-secondary: #b0b0b0;
+            --bg-color: #0a0a0a;
+            --primary-color: #9d5dff;
+            --secondary-color: #00f5c9;
+            --text-color: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --card-bg: rgba(26, 26, 26, 0.5);
+            --sidebar-bg: rgba(20, 20, 20, 0.4);
+            --border-color: rgba(255, 255, 255, 0.1);
         }
-
+        
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
         body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
             font-family: 'Poppins', sans-serif;
-            background: var(--bg);
-            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* NAVBAR */
-        .navbar {
+        #particles-js {
             position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(18,18,18,0.9);
-            backdrop-filter: blur(10px);
-            padding: 15px;
-            text-align: center;
-            z-index: 1000;
+            width: 100%; height: 100%;
+            top: 0; left: 0;
+            z-index: -1;
         }
 
-        .navbar a {
-            margin: 0 15px;
-            color: #aaa;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
+        .page-wrapper {
+            position: relative;
+            z-index: 2;
         }
-
-        .navbar a:hover {
-            color: var(--primary);
-        }
-
-        /* CONTAINER */
+        
         .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 120px 20px 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 5%;
         }
 
-        /* HEADER */
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
+        /* --- Standard Header & Footer --- */
+        .site-header {
+            position: fixed;
+            width: 100%; top: 0; left: 0;
+            background-color: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 20px 5%;
+            border-bottom: 1px solid var(--border-color);
         }
-
-        .header h1 {
-            font-size: 2.5rem;
-
-            background: linear-gradient(90deg,#bb86fc,#03dac6);
-
-            /* FIXED gradient compatibility */
-            -webkit-background-clip: text;
-            background-clip: text;
-
-            -webkit-text-fill-color: transparent;
-        }
-
-        .header p {
-            color: #aaa;
-        }
-
-        /* BUTTONS */
-        .buttons {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: 25px;
-            margin: 10px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .view {
-            background: linear-gradient(90deg,#bb86fc,#03dac6);
-            color: black;
-            font-weight: 600;
-        }
-
-        .download {
-            border: 1px solid #444;
-            color: #fff;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-        }
-
-        /* SECTIONS */
-        .section {
-            margin: 30px 0;
-            padding: 30px;
-            background: var(--card);
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .section h2 {
-            color: var(--primary);
-            margin-bottom: 15px;
+        .site-header nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: auto;
         }
-
-        .section-link {
-            font-size: 0.9rem;
-            color: var(--secondary);
-            text-decoration: none;
-        }
-
-        .section-link:hover {
+        .site-header .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
             color: #fff;
-        }
-
-        /* SKILLS */
-        .skills span {
-            display: inline-block;
-            background: #222;
-            padding: 6px 12px;
-            margin: 5px;
-            border-radius: 20px;
-            border: 1px solid #333;
-        }
-
-        /* PROJECTS */
-        .projects {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .card {
-            background: #1a1a2e;
-            padding: 20px;
-            border-radius: 10px;
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card:hover {
-            transform: scale(1.03);
-        }
-
-        .card h3 {
-            margin-bottom: 5px;
-        }
-
-        .card-link {
-            margin-top: auto;
-            padding-top: 15px;
-            color: var(--secondary);
             text-decoration: none;
+        }
+        .site-header nav ul { list-style: none; display: flex; gap: 30px; }
+        .site-header nav a {
+            text-decoration: none;
+            color: var(--text-color);
             font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .site-header nav a:hover { color: var(--primary-color); }
+        
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 60px;
+            background: #0a0a0a;
+            border-top: 1px solid var(--border-color);
+        }
+        .social-links { margin-bottom: 1rem; }
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: scale(1.2);
         }
 
-        .card-link:hover {
-            color: var(--primary);
+        /* --- Resume Hero Section --- */
+        .resume-hero {
+            padding: 160px 5% 60px;
+            text-align: center;
+        }
+        .resume-hero h1 {
+            font-family: 'Lora', serif;
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .resume-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
         }
 
-        /* CONTACT */
-        .contact a {
-            display: inline-block;
-            color: #ccc;
-            margin: 10px 20px 10px 0;
-            text-decoration: none;
-            transition: 0.3s;
+        /* --- Resume Layout --- */
+        .resume-container {
+            display: flex;
+            gap: 40px;
+        }
+        .resume-sidebar {
+            width: 35%;
+            background-color: var(--sidebar-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 30px;
+            align-self: flex-start;
+        }
+        .resume-main-content {
+            width: 65%;
         }
 
-        .contact a:hover {
-            color: var(--primary);
-        }
-
-        /* TOP BUTTON */
-        .top-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--primary);
-            color: black;
-            padding: 12px 16px;
+        /* --- Sidebar Styling --- */
+        .profile-section { text-align: center; margin-bottom: 30px; }
+        .profile-pic {
+            width: 150px; height: 150px;
             border-radius: 50%;
-            cursor: pointer;
-            font-weight: bold;
-            z-index: 100;
-            transition: 0.3s;
+            border: 4px solid var(--primary-color);
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 0 25px rgba(187, 134, 252, 0.3);
+        }
+        .sidebar-section { margin-bottom: 30px; }
+        .sidebar-section h2 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+        }
+        .contact-list { list-style: none; padding: 0; }
+        .contact-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        .contact-list a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+            word-break: break-all;
+        }
+        .contact-list a:hover { color: var(--secondary-color); }
+        .contact-list i {
+            color: var(--secondary-color);
+            margin-right: 15px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* --- NEW: Animated Skill Bars --- */
+        .skills-list { list-style: none; padding: 0; }
+        .skills-list li { margin-bottom: 15px; }
+        .skill-name {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .progress-bar {
+            background-color: #333;
+            border-radius: 10px;
+            height: 8px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .progress-bar span {
+            display: block;
+            height: 100%;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            width: 0; /* Initial width */
+            transition: width 1.5s ease-in-out;
         }
 
-        .top-btn:hover {
+        /* --- Main Content Styling --- */
+        .main-section { margin-bottom: 40px; }
+        .main-section h2 {
+            font-family: 'Lora', serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+        }
+        .main-section h2 i { margin-right: 15px; }
+
+        .timeline { position: relative; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 5px; top: 5px;
+            width: 2px;
+            height: calc(100% - 5px);
+            background-color: var(--border-color);
+        }
+        .resume-item {
+            margin-bottom: 30px;
+            padding-left: 30px;
+            position: relative;
+        }
+        .resume-item::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 5px;
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            border: 2px solid var(--bg-color);
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px; flex-wrap: wrap;
+        }
+        .item-header h3 {
+            font-size: 1.3rem;
+            color: var(--text-color);
+            margin: 0; font-weight: 600;
+        }
+        .item-header .date {
+            font-style: italic;
+            color: var(--text-secondary);
+            white-space: nowrap; margin-left: 10px;
+        }
+        .resume-item .location {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .resume-item ul {
+            padding-left: 20px;
+            margin-top: 10px;
+            color: var(--text-secondary);
+        }
+
+        /* --- Button & Responsive --- */
+        .btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 12px 28px;
+            background-color: var(--primary-color);
+            color: #121212;
+            text-decoration: none; font-weight: 600;
+            border-radius: 50px;
+            border: 2px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
             transform: translateY(-3px);
-            background: var(--secondary);
         }
 
-        /* ANIMATION */
-        .hidden {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: 0.8s ease;
+        @media (max-width: 992px) {
+            .resume-container { flex-direction: column; }
+            .resume-sidebar, .resume-main-content { width: 100%; }
+        }
+        
+        @media (max-width: 768px) {
+            .site-header nav ul { display: none; }
+            .resume-hero h1 { font-size: 2.8rem; }
         }
 
-        .show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* RESPONSIVE */
-        @media(max-width:768px){
-            .projects {
-                grid-template-columns: 1fr;
+        /* --- NEW: Print Styles --- */
+        @media print {
+            .site-header, footer, #particles-js, .resume-hero p, .btn {
+                display: none !important;
             }
-            .navbar a {
-                margin: 0 8px;
-                font-size: 0.9rem;
+            body {
+                background-color: #fff;
+                color: #000;
+                padding: 0;
+            }
+            .page-wrapper {
+                box-shadow: none;
+            }
+            .container {
+                padding: 2cm;
+                max-width: 100%;
+            }
+            .resume-container {
+                display: block;
+            }
+            .resume-sidebar, .resume-main-content {
+                width: 100%;
+                background: none;
+                border: none;
+                padding: 0;
+                color: #000;
+            }
+            .profile-pic {
+                border-color: #000;
+                box-shadow: none;
+            }
+            .sidebar-section h2, .main-section h2, .item-header h3, .contact-list a, .skill-name, .resume-item .location {
+                color: #000 !important;
+            }
+            .progress-bar {
+                background-color: #ccc;
+                border: 1px solid #000;
+            }
+            .progress-bar span {
+                background-color: #333;
             }
         }
     </style>
 </head>
-
 <body>
+    <div id="particles-js"></div>
+    <div class="page-wrapper">
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="resume.html" style="color: var(--primary);">Resume</a>
-    <a href="contact.html">Contact</a>
-</div>
+        <header class="site-header">
+            <nav>
+                <a href="index.html" class="logo">Harsh Upadhyay</a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-<div class="container">
+        <main>
+            <section class="resume-hero container">
+                <h1>My Resume</h1>
+                <p>A detailed summary of my skills, education, and professional experience.</p>
+                <a href="Harsh_Upadhyay_Resume.pdf" class="btn" download><i class="fas fa-download"></i> Download CV</a>
+            </section>
+            
+            <div class="resume-container container">
+                <aside class="resume-sidebar">
+                    <div class="profile-section">
+                        <img src="harsh1.jpg" alt="Harsh Upadhyay" class="profile-pic">
+                    </div>
 
-    <!-- HEADER -->
-    <div class="header hidden">
-        <h1>Harsh Upadhyay</h1>
-        <p>Data Science Student | ML & Web Developer</p>
+                    <div class="sidebar-section">
+                        <h2>Contact</h2>
+                        <ul class="contact-list">
+                            <li><i class="fas fa-phone"></i> <a href="tel:9648581101">9648581101</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:harshupadhyay750@gmail.com">harshupadhyay750@gmail.com</a></li>
+                            <li><i class="fas fa-map-marker-alt"></i> <span>Lucknow, Uttar Pradesh, India</span></li>
+                            <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/harsh-upadhyay-802049297" target="_blank">LinkedIn</a></li>
+                            <li><i class="fab fa-github"></i> <a href="https://github.com/harshupadhyay750" target="_blank">GitHub</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="skills" class="sidebar-section">
+                        <h2>Skills & Expertise</h2>
+                        
+                        <div class="skill-group" style="margin-bottom: 20px;">
+                            <strong style="color: var(--secondary-color); font-size: 0.9rem; display: block; margin-bottom: 8px;">Languages & Web</strong>
+                            <div class="skill-badges" style="display: flex; flex-wrap: wrap; gap: 6px;">
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Python</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Dart</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">JavaScript</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">React</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">HTML/CSS</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-group" style="margin-bottom: 20px;">
+                            <strong style="color: var(--secondary-color); font-size: 0.9rem; display: block; margin-bottom: 8px;">Mobile Development</strong>
+                            <div class="skill-badges" style="display: flex; flex-wrap: wrap; gap: 6px;">
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Flutter</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Firebase</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">REST APIs</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Android Studio</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-group" style="margin-bottom: 20px;">
+                            <strong style="color: var(--secondary-color); font-size: 0.9rem; display: block; margin-bottom: 8px;">Data & ML</strong>
+                            <div class="skill-badges" style="display: flex; flex-wrap: wrap; gap: 6px;">
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Pandas</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Matplotlib</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Power BI</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Tableau</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Scikit-learn</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">SQL</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-group">
+                            <strong style="color: var(--secondary-color); font-size: 0.9rem; display: block; margin-bottom: 8px;">UI/UX & DevOps</strong>
+                            <div class="skill-badges" style="display: flex; flex-wrap: wrap; gap: 6px;">
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Figma</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Git & GitHub</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Advanced Excel</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">GenAI Tools</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h2>Languages</h2>
+                        <ul class="skills-list">
+                            <li>
+                                <span class="skill-name">Hindi (Native)</span>
+                                <div class="progress-bar"><span data-width="100%"></span></div>
+                            </li>
+                            <li>
+                                <span class="skill-name">English (Professional)</span>
+                                <div class="progress-bar"><span data-width="80%"></span></div>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <div class="resume-main-content">
+                    <section class="main-section">
+                        <h2><i class="fas fa-user-tie"></i> Professional Summary</h2>
+                        <p>B.Tech Computer Science Engineering student specializing in Data Science, with strong analytical skills and hands-on experience in Python, web development (HTML, CSS, JavaScript, React), mobile app engineering (Flutter, Firebase), and data visualization using tools like Matplotlib, Power BI, and Tableau.</p>
+                    </section>
+
+                    <section class="main-section">
+                        <h2><i class="fas fa-briefcase"></i> Experience & Projects</h2>
+                        <div class="timeline">
+                            <div class="resume-item">
+                                <div class="item-header">
+                                    <h3>Student Developer</h3>
+                                    <span class="date">2023 - Present</span>
+                                </div>
+                                <p class="location">ML & Web/Mobile Development</p>
+                                <ul>
+                                    <li>Built **FitByte**, an AI-powered fitness app using Flutter and Firebase, featuring interactive calorie tracking dashboards.</li>
+                                    <li>Performed in-depth Cafe Sales Data Analysis using Pandas and Matplotlib, discovering business trends to optimize operations.</li>
+                                    <li>Deploys full-stack portfolio systems integrating custom client-side AI clone assistants.</li>
+                                </ul>
+                            </div>
+                            <div class="resume-item">
+                                <div class="item-header">
+                                    <h3>Smart India Hackathon 2025</h3>
+                                    <span class="date">2024 - 2025</span>
+                                </div>
+                                <p class="location">Participant & Core Developer</p>
+                                <ul>
+                                    <li>Designed and implemented **MentEra** (AI Career Advisor), mapping student profiles to career resources.</li>
+                                    <li>Integrated machine learning algorithms (decision trees, clustering) for personalized path predictions.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="main-section">
+                        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                        <div class="timeline">
+                            <div class="resume-item">
+                                <div class="item-header">
+                                    <h3>B.Tech, Computer Science (Data Science)</h3>
+                                    <span class="date">2022 - 2026</span>
+                                </div>
+                                <p class="location">SRMCEM, AKTU | Lucknow, UP</p>
+                                <p style="color: var(--secondary-color); font-weight: 500; font-size: 0.95rem;">CGPA: 7.0</p>
+                            </div>
+                            <div class="resume-item">
+                                <div class="item-header">
+                                    <h3>Intermediate (CBSE)</h3>
+                                    <span class="date">Completed: 2022</span>
+                                </div>
+                                <p class="location">Radient Central Academy | percentage: 64.17%</p>
+                            </div>
+                            <div class="resume-item">
+                                <div class="item-header">
+                                    <h3>High School</h3>
+                                    <span class="date">Completed: 2020</span>
+                                </div>
+                                <p class="location">Anwar Public School | percentage: 62.80%</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="main-section">
+                        <h2><i class="fas fa-award"></i> Certifications</h2>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
+                                <i class="fas fa-certificate" style="color: var(--secondary-color);"></i>
+                                <span><strong>Data Science with Machine Learning</strong> – SRDT (2024)</span>
+                            </li>
+                            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
+                                <i class="fas fa-certificate" style="color: var(--secondary-color);"></i>
+                                <span><strong>Machine Learning Fundamentals</strong> – Online Certification (2024)</span>
+                            </li>
+                            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
+                                <i class="fas fa-certificate" style="color: var(--secondary-color);"></i>
+                                <span><strong>Python for Data Analysis</strong> – Online Certification (2023)</span>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="social-links">
+                <a href="https://github.com/harshupadhyay750" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/harsh-upadhyay-802049297" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/harsh_upadhyay__" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2026 by Harsh Upadhyay. All rights reserved.</p>
+        </footer>
+
     </div>
 
-    <!-- BUTTONS -->
-    <div class="buttons hidden">
-        <a href="Harsh_Upadhyay_Resume.pdf" target="_blank" class="btn view">
-            <i class="fas fa-eye"></i> View PDF
-        </a>
-        <a href="Harsh_Upadhyay_Resume.pdf" download class="btn download">
-            <i class="fas fa-download"></i> Download
-        </a>
-    </div>
-
-    <!-- PROFILE -->
-    <div class="section hidden">
-        <h2>Profile <a href="about.html" class="section-link">Read Full Bio →</a></h2>
-        <p>
-            B.Tech CSE (Data Science) student with strong analytical skills and hands-on experience in Python, Machine Learning, and Web Development.
-        </p>
-    </div>
-
-    <!-- SKILLS -->
-    <div class="section hidden">
-        <h2>Skills</h2>
-        <div class="skills">
-            <span>Python</span>
-            <span>SQL</span>
-            <span>Power BI</span>
-            <span>Tableau</span>
-            <span>JavaScript</span>
-            <span>Machine Learning</span>
-            <span>Advanced Excel</span>
-            <span>Cloud Computing</span>
-            <span>Generative AI</span>
+    <!-- AI Assistant Floating UI -->
+    <div class="ai-chat-widget">
+        <button id="chat-toggle" class="chat-toggle-btn">
+            <i class="fas fa-robot"></i> Ask AI Harsh
+        </button>
+        <div id="chat-window" class="chat-window hidden-chat" aria-hidden="true">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <i class="fas fa-robot"></i>
+                    <strong>Harsh's AI Clone</strong>
+                </div>
+                <button id="chat-close" class="close-btn" aria-label="Close chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="message ai-message">Hi! I'm Harsh's personal AI clone. Ask me about my projects, skills, certifications, or contact info.</div>
+            </div>
+            <div class="suggestion-chips-container">
+                <div class="suggestion-chips-title">Suggested Topics</div>
+                <div class="suggestion-chips">
+                    <button class="chip" data-query="Tell me about FitByte project">FitByte App</button>
+                    <button class="chip" data-query="What is the MentEra Career Advisor?">MentEra AI</button>
+                    <button class="chip" data-query="What skills do you have?">Technical Skills</button>
+                    <button class="chip" data-query="Show me your certifications">Certifications</button>
+                    <button class="chip" data-query="How can I contact you?">Contact Info</button>
+                    <button class="chip" data-query="Tell me about your education">Education</button>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input id="chat-input" type="text" placeholder="Ask me something..." aria-label="Chat input">
+                <button id="chat-send" aria-label="Send message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
         </div>
     </div>
 
-    <!-- PROJECTS -->
-    <div class="section hidden">
-        <h2>Projects <a href="projects.html" class="section-link">View Portfolio →</a></h2>
-
-        <div class="projects">
-
-            <div class="card">
-                <h3>MentEra AI Career Advisor</h3>
-                <p><strong>Tech:</strong> Python, ML, React</p>
-                <p>AI-based career recommendation system</p>
-                <a class="card-link" href="projects.html">View Details →</a>
-            </div>
-
-            <div class="card">
-                <h3>Café Sales Analysis</h3>
-                <p><strong>Tech:</strong> Python, Pandas</p>
-                <p>Customer behavior insights using EDA</p>
-                <a class="card-link" href="projects.html">View Details →</a>
-            </div>
-
-            <div class="card">
-                <h3>Smart Home Analytics</h3>
-                <p><strong>Tech:</strong> IoT + Cloud</p>
-                <p>Real-time smart home monitoring system</p>
-                <a class="card-link" href="projects.html">View Details →</a>
-            </div>
-
-            <div class="card">
-                <h3>Portfolio Website</h3>
-                <p><strong>Tech:</strong> HTML, CSS, JS</p>
-                <p>Responsive personal portfolio website</p>
-                <a class="card-link" href="index.html">View Site →</a>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- CONTACT -->
-    <div class="section contact hidden">
-        <h2>Contact</h2>
-
-        <a href="mailto:harshupadhyay750@gmail.com">
-            <i class="fas fa-envelope"></i> Email
-        </a>
-
-        <a href="https://github.com/YOUR_GITHUB_USERNAME">
-            <i class="fab fa-github"></i> GitHub
-        </a>
-
-        <a href="https://www.linkedin.com/in/harsh-upadhyay-802049297">
-            <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-
-        <br><br>
-
-        <a href="contact.html" class="btn download">
-            <i class="fas fa-paper-plane"></i> Contact Form
-        </a>
-    </div>
-
-</div>
-
-<!-- TOP BUTTON -->
-<div class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-    <i class="fas fa-arrow-up"></i>
-</div>
-
-<!-- ANIMATION SCRIPT -->
-<script>
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
-    });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
-</script>
-
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

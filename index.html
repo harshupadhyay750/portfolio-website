@@ -30,7 +30,7 @@
             <div id="particles-js"></div>
             <div class="hero-text">
                 <h1>Hi, I'm <span class="name">Harsh Upadhyay</span></h1>
-                <p><span id="typed-text"></span></p>
+                <p>I'm a <span id="typed-text"></span></p>
                 <a href="#about" class="btn">Discover More <i class="fas fa-arrow-right"></i></a>
             </div>
         </section>
@@ -86,32 +86,53 @@
         <section id="contact" class="hidden">
             <h2>Get In Touch</h2>
             <p>I'm currently seeking new opportunities and collaborations. My inbox is always open, whether you have a question or just want to say hi, I'll get back to you!</p>
-            <a href="mailto:harshupadhysy750@gmail.com" class="btn">Say Hello <i class="fas fa-paper-plane"></i></a>
+            <a href="mailto:harshupadhyay750@gmail.com" class="btn">Say Hello <i class="fas fa-paper-plane"></i></a>
         </section>
     </main>
 
     <footer>
         <div class="social-links">
-            <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/harshupadhyay750" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/harsh-upadhyay-802049297" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.instagram.com/harsh_upadhyay__" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
-        <p>&copy; 2025 by Harsh Upadhyay. All rights reserved.</p>
+        <p>&copy; 2026 by Harsh Upadhyay. All rights reserved.</p>
     </footer>
 
+    <!-- AI Assistant Floating UI -->
     <div class="ai-chat-widget">
-        <button id="chat-toggle" class="chat-toggle-btn"><i class="fas fa-robot"></i> AI Assistant</button>
+        <button id="chat-toggle" class="chat-toggle-btn">
+            <i class="fas fa-robot"></i> Ask AI Harsh
+        </button>
         <div id="chat-window" class="chat-window hidden-chat" aria-hidden="true">
             <div class="chat-header">
-                <h3>Portfolio AI</h3>
-                <button id="chat-close" class="close-btn" aria-label="Close chat">&times;</button>
+                <div class="chat-header-info">
+                    <i class="fas fa-robot"></i>
+                    <strong>Harsh's AI Clone</strong>
+                </div>
+                <button id="chat-close" class="close-btn" aria-label="Close chat">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
             <div id="chat-messages" class="chat-messages">
-                <div class="message ai-message">Hi! Ask me about my skills, projects, or experience.</div>
+                <div class="message ai-message">Hi! I'm Harsh's personal AI clone. Ask me about my projects, skills, certifications, or contact info.</div>
+            </div>
+            <div class="suggestion-chips-container">
+                <div class="suggestion-chips-title">Suggested Topics</div>
+                <div class="suggestion-chips">
+                    <button class="chip" data-query="Tell me about FitByte project">FitByte App</button>
+                    <button class="chip" data-query="What is the MentEra Career Advisor?">MentEra AI</button>
+                    <button class="chip" data-query="What skills do you have?">Technical Skills</button>
+                    <button class="chip" data-query="Show me your certifications">Certifications</button>
+                    <button class="chip" data-query="How can I contact you?">Contact Info</button>
+                    <button class="chip" data-query="Tell me about your education">Education</button>
+                </div>
             </div>
             <div class="chat-input-area">
-                <input id="chat-input" type="text" placeholder="Type your question..." aria-label="Chat input">
-                <button id="chat-send" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+                <input id="chat-input" type="text" placeholder="Ask me something..." aria-label="Chat input">
+                <button id="chat-send" aria-label="Send message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
             </div>
         </div>
     </div>

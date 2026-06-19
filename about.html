@@ -8,13 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         :root {
-            --bg-color: #121212;
-            --primary-color: #bb86fc;
-            --secondary-color: #03dac6;
+            --bg-color: #0a0a0a;
+            --primary-color: #9d5dff;
+            --secondary-color: #00f5c9;
             --text-color: #e0e0e0;
-            --text-secondary: #efedda;
+            --text-secondary: #a0a0a0;
             --card-bg: rgba(26, 26, 26, 0.7);
             --border-color: rgba(255, 255, 255, 0.1);
         }
@@ -57,7 +58,7 @@
             padding: 0 5%;
         }
 
-        /* --- Header & Footer --- */
+        /* --- Header & Footer (for cohesive site experience) --- */
         .site-header {
             position: fixed;
             width: 100%;
@@ -115,7 +116,7 @@
             transform: scale(1.2);
         }
 
-        /* --- Hero Section --- */
+        /* --- New Hero Section --- */
         .about-hero {
             padding: 180px 5% 100px;
             text-align: center;
@@ -243,150 +244,6 @@
         .skills-list li:hover i {
             color: #121212;
         }
-
-        /* --- AI Chat Widget Styling --- */
-        .ai-chat-widget {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .chat-toggle-btn {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: #121212;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .chat-toggle-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 25px rgba(3, 218, 198, 0.4);
-        }
-
-        .chat-window {
-            position: absolute;
-            bottom: 80px;
-            right: 0;
-            width: 350px;
-            height: 450px;
-            background-color: var(--card-bg);
-            backdrop-filter: blur(15px);
-            border: 1px solid var(--border-color);
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            transform-origin: bottom right;
-        }
-
-        .hidden-chat {
-            opacity: 0;
-            transform: scale(0.1);
-            pointer-events: none;
-        }
-
-        .chat-header {
-            background-color: rgba(18, 18, 18, 0.9);
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .close-btn {
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-        }
-        .close-btn:hover { color: #ff5252; }
-
-        .chat-messages {
-            flex-grow: 1;
-            padding: 15px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .chat-messages::-webkit-scrollbar { width: 6px; }
-        .chat-messages::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 10px; }
-
-        .message {
-            max-width: 80%;
-            padding: 10px 15px;
-            border-radius: 15px;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            word-wrap: break-word;
-        }
-
-        .ai-message {
-            background-color: rgba(255, 255, 255, 0.05);
-            color: var(--text-color);
-            align-self: flex-start;
-            border-bottom-left-radius: 2px;
-        }
-
-        .user-message {
-            background: linear-gradient(135deg, var(--primary-color), #9965f4);
-            color: #121212;
-            align-self: flex-end;
-            border-bottom-right-radius: 2px;
-            font-weight: 500;
-        }
-
-        .chat-input-area {
-            display: flex;
-            padding: 15px;
-            background-color: rgba(18, 18, 18, 0.9);
-            border-top: 1px solid var(--border-color);
-            gap: 10px;
-        }
-
-        .chat-input-area input {
-            flex-grow: 1;
-            background: transparent;
-            border: 1px solid #333;
-            padding: 10px 15px;
-            border-radius: 20px;
-            color: white;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-        
-        .chat-input-area input:focus { border-color: var(--secondary-color); }
-
-        .chat-input-area button {
-            background-color: var(--secondary-color);
-            color: #121212;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: transform 0.2s;
-            display: grid;
-            place-items: center;
-        }
-        .chat-input-area button:hover { transform: scale(1.1); }
         
         /* Animation & Responsiveness */
         .hidden {
@@ -402,7 +259,7 @@
                 gap: 3rem;
             }
             .profile-image-container {
-                order: -1;
+                order: -1; /* Puts image on top on mobile */
                 max-width: 400px;
                 margin: 0 auto;
             }
@@ -412,13 +269,6 @@
             .site-header nav ul { display: none; }
             .about-hero { padding: 140px 5% 60px; }
             .about-hero h1 { font-size: 2.8rem; }
-        }
-
-        @media (max-width: 400px) {
-            .chat-window {
-                width: 300px;
-                right: -10px;
-            }
         }
     </style>
 </head>
@@ -431,10 +281,9 @@
                 <a href="index.html" class="logo">Harsh Upadhyay</a>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" style="color: var(--primary-color);">About</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="resume.html">Resume</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -443,7 +292,7 @@
             <section class="about-hero hidden">
                 <div class="container">
                     <h1>About Me</h1>
-                    <p>A B.Tech CSE Data Science student on a mission to build beautiful and impactful digital solutions through web development and machine learning.</p>
+                    <p>A passionate developer and data analyst on a mission to build beautiful and impactful digital solutions.</p>
                 </div>
             </section>
 
@@ -451,7 +300,7 @@
                 <div class="section-grid">
                     <div class="section-header hidden">
                         <h2>My Professional Mission</h2>
-                        <p>As a results-driven student with a strong focus on Data Science, my goal is to blend analytical problem-solving with technology. I specialize in data analysis, machine learning, and web development, turning complex datasets into elegant, user-friendly experiences. I am always eager to contribute to innovative projects that leverage tools like Python and Power BI for impactful decision-making.</p>
+                        <p>As a results-driven student, my goal is to blend creativity with technology. I specialize in full-stack development, turning complex challenges into elegant, user-friendly experiences. My core interest lies in machine learning and data analysis, and I am always eager to contribute to innovative projects that leverage data for impactful decision-making.</p>
                     </div>
                     <div class="profile-image-container hidden">
                         <img src="harsh1.jpg" alt="Harsh Upadhyay">
@@ -463,24 +312,30 @@
                 <div class="section-grid">
                     <div class="section-header hidden">
                         <h2>My Journey</h2>
-                        <p>Every step in my journey has equipped me with a unique blend of theoretical knowledge and practical skills, preparing me to tackle real-world, data-driven challenges.</p>
+                        <p>Every step in my journey has equipped me with a unique blend of theoretical knowledge and practical skills, preparing me to tackle real-world challenges.</p>
                     </div>
                     <div class="timeline-container hidden">
                          <div class="timeline">
                             <div class="timeline-item" data-icon="&#xf19d;">
-                                <h3>B.Tech CSE (Data Science)</h3>
-                                <p><strong>Dr. A.P.J. Abdul Kalam Technical University (AKTU) / SRMCEM</strong></p>
-                                <p>Building a strong foundation in core CS principles and data analytics.</p>
+                                <h3>B.Tech in Computer Science (Data Science)</h3>
+                                <p><strong>Shri Ramswaroop Memorial College of Engineering (SRMCEM, AKTU)</strong></p>
+                                <p>CGPA: 7.0 | Duration: 2022 - 2026</p>
+                                <p>Building a strong foundation in core CS principles, machine learning, and data analytics.</p>
                             </div>
-                            <div class="timeline-item" data-icon="&#xf0a3;">
-                                <h3>Certifications</h3>
-                                <p><strong>Data Science & Machine Learning</strong></p>
-                                <p>Certified in Data Science with ML (SRDT), Machine Learning Fundamentals, and Python for Data Analysis.</p>
+                            <div class="timeline-item" data-icon="&#xf19d;">
+                                <h3>Intermediate (CBSE)</h3>
+                                <p><strong>Radient Central Academy, Jalalpur</strong></p>
+                                <p>Percentage: 64.17% | Completed: 2022</p>
+                            </div>
+                            <div class="timeline-item" data-icon="&#xf19d;">
+                                <h3>High School</h3>
+                                <p><strong>Anwar Public School</strong></p>
+                                <p>Percentage: 62.80% | Completed: 2020</p>
                             </div>
                             <div class="timeline-item" data-icon="&#xf121;">
                                 <h3>Smart India Hackathon 2025</h3>
                                 <p><strong>National-Level Tech Competition</strong></p>
-                                <p>Developed MentEra, a real-world AI career mapping software solution under pressure.</p>
+                                <p>Developed MentEra (AI Career Advisor) under pressure in a collaborative environment.</p>
                             </div>
                         </div>
                     </div>
@@ -491,7 +346,7 @@
                  <div class="section-grid">
                      <div class="section-header hidden">
                         <h2>Skills & Expertise</h2>
-                        <p>I possess a versatile skill set that spans from front-end web design to complex data visualization and machine learning algorithms.</p>
+                        <p>I possess a versatile skill set that spans from front-end design to back-end logic and data-driven intelligence.</p>
                     </div>
                     <div class="skills-container hidden">
                         <div class="skills-card">
@@ -529,118 +384,40 @@
         <button id="chat-toggle" class="chat-toggle-btn">
             <i class="fas fa-robot"></i> Ask AI Harsh
         </button>
-        
-        <div id="chat-window" class="chat-window hidden-chat">
+        <div id="chat-window" class="chat-window hidden-chat" aria-hidden="true">
             <div class="chat-header">
-                <div>
-                    <i class="fas fa-robot" style="color: var(--primary-color); margin-right: 8px;"></i>
+                <div class="chat-header-info">
+                    <i class="fas fa-robot"></i>
                     <strong>Harsh's AI Clone</strong>
                 </div>
-                <button id="close-chat" class="close-btn"><i class="fas fa-times"></i></button>
+                <button id="chat-close" class="close-btn" aria-label="Close chat">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-            
             <div id="chat-messages" class="chat-messages">
-                <div class="message ai-message">
-                    Hi! I'm Harsh's personal AI. I know all about his Data Science projects, his tech stack, and his resume. What would you like to know?
+                <div class="message ai-message">Hi! I'm Harsh's personal AI clone. Ask me about my projects, skills, certifications, or contact info.</div>
+            </div>
+            <div class="suggestion-chips-container">
+                <div class="suggestion-chips-title">Suggested Topics</div>
+                <div class="suggestion-chips">
+                    <button class="chip" data-query="Tell me about FitByte project">FitByte App</button>
+                    <button class="chip" data-query="What is the MentEra Career Advisor?">MentEra AI</button>
+                    <button class="chip" data-query="What skills do you have?">Technical Skills</button>
+                    <button class="chip" data-query="Show me your certifications">Certifications</button>
+                    <button class="chip" data-query="How can I contact you?">Contact Info</button>
+                    <button class="chip" data-query="Tell me about your education">Education</button>
                 </div>
             </div>
-            
             <div class="chat-input-area">
-                <input type="text" id="user-input" placeholder="Ask me about Harsh's skills..." autocomplete="off">
-                <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+                <input id="chat-input" type="text" placeholder="Ask me something..." aria-label="Chat input">
+                <button id="chat-send" aria-label="Send message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        // Particles setup
-        if (document.getElementById('particles-js')) {
-            particlesJS('particles-js', { "particles": { "number": { "value": 40, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.2, "random": true }, "size": { "value": 3, "random": true }, "line_linked": { "enable": false }, "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": false }, "onclick": { "enable": false } } }, "retina_detect": true });
-        }
-        
-        // Intersection Observer for scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        const hiddenElements = document.querySelectorAll('.hidden');
-        hiddenElements.forEach((el) => observer.observe(el));
-
-        // --- AI Chatbot Logic (Connected to FastAPI) ---
-        const chatToggleBtn = document.getElementById('chat-toggle');
-        const chatWindow = document.getElementById('chat-window');
-        const closeChatBtn = document.getElementById('close-chat');
-        const sendBtn = document.getElementById('send-btn');
-        const userInput = document.getElementById('user-input');
-        const chatMessages = document.getElementById('chat-messages');
-
-        // Toggle Chat Window
-        chatToggleBtn.addEventListener('click', () => {
-            chatWindow.classList.toggle('hidden-chat');
-        });
-
-        closeChatBtn.addEventListener('click', () => {
-            chatWindow.classList.add('hidden-chat');
-        });
-
-        // Handle Sending Messages
-        async function sendMessage() {
-            const text = userInput.value.trim();
-            if (!text) return;
-
-            // Add User Message to UI
-            appendMessage(text, 'user-message');
-            userInput.value = '';
-
-            // Add "Thinking..." indicator
-            const typingDiv = document.createElement('div');
-            typingDiv.classList.add('message', 'ai-message');
-            typingDiv.textContent = "Thinking...";
-            typingDiv.id = "typing-indicator";
-            chatMessages.appendChild(typingDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-
-            try {
-                // Connecting to your local FastAPI server
-                const response = await fetch('http://localhost:8000/chat', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: text })
-                });
-
-                const data = await response.json();
-                
-                // Remove indicator and show real AI reply
-                const indicator = document.getElementById('typing-indicator');
-                if(indicator) indicator.remove();
-                appendMessage(data.reply, 'ai-message');
-                
-            } catch (error) {
-                console.error("Error:", error);
-                const indicator = document.getElementById('typing-indicator');
-                if(indicator) indicator.remove();
-                appendMessage("Oops! My backend server isn't running. Please start the Python server to chat!", 'ai-message');
-            }
-        }
-
-        function appendMessage(text, className) {
-            const msgDiv = document.createElement('div');
-            msgDiv.classList.add('message', className);
-            msgDiv.textContent = text;
-            chatMessages.appendChild(msgDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        userInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') sendMessage();
-        });
-
-        sendBtn.addEventListener('click', sendMessage);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
