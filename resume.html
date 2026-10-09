@@ -3,580 +3,469 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume | Harsh Upadhyay</title>
+    <meta name="description" content="Resume of Harsh Upadhyay - B.Tech Data Science (AKTU 2027), SRMCEM. Data Analyst and Machine Learning Engineer with projects in ML, Power BI, and Flutter.">
+    <meta name="author" content="Harsh Upadhyay">
+    <title>Resume & Credentials | Harsh Upadhyay</title>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <style>
-        :root {
-            --bg-color: #0a0a0a;
-            --primary-color: #9d5dff;
-            --secondary-color: #00f5c9;
-            --text-color: #e0e0e0;
-            --text-secondary: #a0a0a0;
-            --card-bg: rgba(26, 26, 26, 0.5);
-            --sidebar-bg: rgba(20, 20, 20, 0.4);
-            --border-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        #particles-js {
-            position: fixed;
-            width: 100%; height: 100%;
-            top: 0; left: 0;
-            z-index: -1;
-        }
-
-        .page-wrapper {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-
-        /* --- Standard Header & Footer --- */
-        .site-header {
-            position: fixed;
-            width: 100%; top: 0; left: 0;
-            background-color: rgba(18, 18, 18, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-            padding: 20px 5%;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .site-header nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .site-header .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #fff;
-            text-decoration: none;
-        }
-        .site-header nav ul { list-style: none; display: flex; gap: 30px; }
-        .site-header nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        .site-header nav a:hover { color: var(--primary-color); }
-        
-        footer {
-            text-align: center;
-            padding: 3rem 1rem;
-            margin-top: 60px;
-            background: #0a0a0a;
-            border-top: 1px solid var(--border-color);
-        }
-        .social-links { margin-bottom: 1rem; }
-        .social-links a {
-            color: var(--text-secondary);
-            font-size: 1.5rem;
-            margin: 0 1rem;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-        .social-links a:hover {
-            color: var(--primary-color);
-            transform: scale(1.2);
-        }
-
-        /* --- Resume Hero Section --- */
-        .resume-hero {
-            padding: 160px 5% 60px;
-            text-align: center;
-        }
-        .resume-hero h1 {
-            font-family: 'Lora', serif;
-            font-size: 3.5rem;
-            color: #fff;
-            margin-bottom: 1rem;
-        }
-        .resume-hero p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-
-        /* --- Resume Layout --- */
-        .resume-container {
-            display: flex;
-            gap: 40px;
-        }
-        .resume-sidebar {
-            width: 35%;
-            background-color: var(--sidebar-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: 15px;
-            padding: 30px;
-            align-self: flex-start;
-        }
-        .resume-main-content {
-            width: 65%;
-        }
-
-        /* --- Sidebar Styling --- */
-        .profile-section { text-align: center; margin-bottom: 30px; }
-        .profile-pic {
-            width: 150px; height: 150px;
-            border-radius: 50%;
-            border: 4px solid var(--primary-color);
-            object-fit: cover;
-            margin-bottom: 15px;
-            box-shadow: 0 0 25px rgba(187, 134, 252, 0.3);
-        }
-        .sidebar-section { margin-bottom: 30px; }
-        .sidebar-section h2 {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border-color);
-            text-align: left;
-        }
-        .contact-list { list-style: none; padding: 0; }
-        .contact-list li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-        .contact-list a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s;
-            word-break: break-all;
-        }
-        .contact-list a:hover { color: var(--secondary-color); }
-        .contact-list i {
-            color: var(--secondary-color);
-            margin-right: 15px;
-            width: 20px;
-            text-align: center;
-        }
-        
-        /* --- NEW: Animated Skill Bars --- */
-        .skills-list { list-style: none; padding: 0; }
-        .skills-list li { margin-bottom: 15px; }
-        .skill-name {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-        .progress-bar {
-            background-color: #333;
-            border-radius: 10px;
-            height: 8px;
-            width: 100%;
-            overflow: hidden;
-        }
-        .progress-bar span {
-            display: block;
-            height: 100%;
-            background-color: var(--secondary-color);
-            border-radius: 10px;
-            width: 0; /* Initial width */
-            transition: width 1.5s ease-in-out;
-        }
-
-        /* --- Main Content Styling --- */
-        .main-section { margin-bottom: 40px; }
-        .main-section h2 {
-            font-family: 'Lora', serif;
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-        }
-        .main-section h2 i { margin-right: 15px; }
-
-        .timeline { position: relative; }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 5px; top: 5px;
-            width: 2px;
-            height: calc(100% - 5px);
-            background-color: var(--border-color);
-        }
-        .resume-item {
-            margin-bottom: 30px;
-            padding-left: 30px;
-            position: relative;
-        }
-        .resume-item::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 5px;
-            width: 12px; height: 12px;
-            border-radius: 50%;
-            background-color: var(--secondary-color);
-            border: 2px solid var(--bg-color);
-        }
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 5px; flex-wrap: wrap;
-        }
-        .item-header h3 {
-            font-size: 1.3rem;
-            color: var(--text-color);
-            margin: 0; font-weight: 600;
-        }
-        .item-header .date {
-            font-style: italic;
-            color: var(--text-secondary);
-            white-space: nowrap; margin-left: 10px;
-        }
-        .resume-item .location {
-            color: var(--secondary-color);
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-        .resume-item ul {
-            padding-left: 20px;
-            margin-top: 10px;
-            color: var(--text-secondary);
-        }
-
-        /* --- Button & Responsive --- */
-        .btn {
-            display: inline-flex; align-items: center; gap: 10px;
-            padding: 12px 28px;
-            background-color: var(--primary-color);
-            color: #121212;
-            text-decoration: none; font-weight: 600;
-            border-radius: 50px;
-            border: 2px solid var(--primary-color);
-            transition: all 0.3s ease;
-        }
-        .btn:hover {
-            background-color: transparent;
-            color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        @media (max-width: 992px) {
-            .resume-container { flex-direction: column; }
-            .resume-sidebar, .resume-main-content { width: 100%; }
-        }
-        
-        @media (max-width: 768px) {
-            .site-header nav ul { display: none; }
-            .resume-hero h1 { font-size: 2.8rem; }
-        }
-
-        /* --- NEW: Print Styles --- */
-        @media print {
-            .site-header, footer, #particles-js, .resume-hero p, .btn {
-                display: none !important;
-            }
-            body {
-                background-color: #fff;
-                color: #000;
-                padding: 0;
-            }
-            .page-wrapper {
-                box-shadow: none;
-            }
-            .container {
-                padding: 2cm;
-                max-width: 100%;
-            }
-            .resume-container {
-                display: block;
-            }
-            .resume-sidebar, .resume-main-content {
-                width: 100%;
-                background: none;
-                border: none;
-                padding: 0;
-                color: #000;
-            }
-            .profile-pic {
-                border-color: #000;
-                box-shadow: none;
-            }
-            .sidebar-section h2, .main-section h2, .item-header h3, .contact-list a, .skill-name, .resume-item .location {
-                color: #000 !important;
-            }
-            .progress-bar {
-                background-color: #ccc;
-                border: 1px solid #000;
-            }
-            .progress-bar span {
-                background-color: #333;
-            }
-        }
-    </style>
 </head>
 <body>
     <div id="particles-js"></div>
-    <div class="page-wrapper">
 
+    <div class="page-wrapper">
+        <!-- Site Header -->
         <header class="site-header">
-            <nav>
-                <a href="index.html" class="logo">Harsh Upadhyay</a>
-                <ul>
+            <div class="container nav-container">
+                <a href="index.html" class="logo" aria-label="Harsh Upadhyay Homepage">
+                    <span class="logo-badge">HU</span>
+                    <span>Harsh Upadhyay</span>
+                </a>
+                
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="projects.html">Projects</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="skill.html">Skills</a></li>
+                    <li><a href="resume.html" class="active">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <a href="contact.html" class="nav-cta-btn">
+                            <i class="fas fa-paper-plane"></i> Let's Talk
+                        </a>
+                    </li>
                 </ul>
-            </nav>
+            </div>
         </header>
 
-        <main>
-            <section class="resume-hero container">
-                <h1>My Resume</h1>
-                <p>A detailed summary of my skills, education, and professional experience.</p>
-                <a href="Harsh_Upadhyay_Resume.pdf" class="btn" download><i class="fas fa-download"></i> Download CV</a>
-            </section>
-            
-            <div class="resume-container container">
-                <aside class="resume-sidebar">
-                    <div class="profile-section">
-                        <img src="harsh1.jpg" alt="Harsh Upadhyay" class="profile-pic">
+        <main style="padding-top: 140px; padding-bottom: 80px;">
+            <div class="container">
+                <!-- Page Title & Actions -->
+                <div class="section-header-center reveal">
+                    <span class="section-tag"><i class="fas fa-file-invoice"></i> Verified Curriculum Vitae</span>
+                    <h1 class="section-title">Professional Resume</h1>
+                    <p class="section-subtitle">
+                        Final-year Data Science student with proven experience across data cleaning, predictive modeling, executive BI dashboarding, and mobile app deployment.
+                    </p>
+                    
+                    <div style="display: flex; justify-content: center; gap: 14px; margin-top: 25px; flex-wrap: wrap;">
+                        <a href="Harsh_Upadhyay_Resume.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> Download PDF Resume
+                        </a>
+                        <button id="print-resume-btn" class="btn btn-secondary">
+                            <i class="fas fa-print"></i> Print / Save as PDF
+                        </button>
+                        <a href="contact.html" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i> Hire Harsh
+                        </a>
                     </div>
+                </div>
 
-                    <div class="sidebar-section">
-                        <h2>Contact</h2>
-                        <ul class="contact-list">
-                            <li><i class="fas fa-phone"></i> <a href="tel:9648581101">9648581101</a></li>
-                            <li><i class="fas fa-envelope"></i> <a href="mailto:harshupadhyay750@gmail.com">harshupadhyay750@gmail.com</a></li>
-                            <li><i class="fas fa-map-marker-alt"></i> <span>Lucknow, Uttar Pradesh, India</span></li>
-                            <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/harsh-upadhyay-802049297" target="_blank">LinkedIn</a></li>
-                            <li><i class="fab fa-github"></i> <a href="https://github.com/harshupadhyay750" target="_blank">GitHub</a></li>
-                        </ul>
+                <!-- Resume Layout -->
+                <div class="resume-layout">
+                    <!-- Left Sidebar -->
+                    <aside class="resume-sidebar reveal">
+                        <div class="resume-profile">
+                            <div class="resume-avatar-wrapper">
+                                <img src="harsh1.jpg" alt="Harsh Upadhyay" class="resume-avatar">
+                            </div>
+                            <h2>Harsh Upadhyay</h2>
+                            <p>Data Science Student | Aspiring ML Engineer & Data Analyst</p>
+                        </div>
+
+                        <!-- Contact Details -->
+                        <div class="resume-sidebar-section">
+                            <h3 class="resume-sidebar-title">
+                                <i class="fas fa-address-card"></i> Contact
+                            </h3>
+                            <ul class="resume-contact-list">
+                                <li>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Lucknow, Uttar Pradesh</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-phone-alt"></i>
+                                    <a href="tel:9648581101">9648581101</a>
+                                    <button class="copy-btn" data-copy="9648581101" title="Copy phone number">Copy</button>
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:harshupadhysy750@gmail.com">harshupadhysy750@gmail.com</a>
+                                    <button class="copy-btn" data-copy="harshupadhysy750@gmail.com" title="Copy email address">Copy</button>
+                                </li>
+                                <li>
+                                    <i class="fab fa-linkedin"></i>
+                                    <a href="https://www.linkedin.com/in/harsh-upadhyay-802049297" target="_blank" rel="noopener noreferrer">
+                                        linkedin.com/in/harsh-upadhyay
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="fab fa-github"></i>
+                                    <a href="https://github.com/harshupadhyay750" target="_blank" rel="noopener noreferrer">
+                                        github.com/harshupadhyay750
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Technical Skills (Organized by Resume) -->
+                        <div class="resume-sidebar-section">
+                            <h3 class="resume-sidebar-title">
+                                <i class="fas fa-tools"></i> Technical Skills
+                            </h3>
+
+                            <div class="skill-category-block">
+                                <span class="skill-category-title">Programming Languages</span>
+                                <div class="skill-tag-group">
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">Dart</span>
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">SQL</span>
+                                    <span class="skill-tag">HTML</span>
+                                    <span class="skill-tag">CSS</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category-block">
+                                <span class="skill-category-title">Machine Learning & AI</span>
+                                <div class="skill-tag-group">
+                                    <span class="skill-tag">Scikit-learn</span>
+                                    <span class="skill-tag">XGBoost</span>
+                                    <span class="skill-tag">OpenCV</span>
+                                    <span class="skill-tag">MediaPipe</span>
+                                    <span class="skill-tag">SHAP (XAI)</span>
+                                    <span class="skill-tag">TensorFlow (basic)</span>
+                                    <span class="skill-tag">ChatGPT API</span>
+                                    <span class="skill-tag">Decision Trees</span>
+                                    <span class="skill-tag">K-Means Clustering</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category-block">
+                                <span class="skill-category-title">Data & Analytics</span>
+                                <div class="skill-tag-group">
+                                    <span class="skill-tag">Pandas</span>
+                                    <span class="skill-tag">Matplotlib</span>
+                                    <span class="skill-tag">Power BI</span>
+                                    <span class="skill-tag">Tableau</span>
+                                    <span class="skill-tag">Advanced Excel</span>
+                                    <span class="skill-tag">SQL</span>
+                                    <span class="skill-tag">Data Cleaning & EDA</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category-block">
+                                <span class="skill-category-title">Mobile, Web & Backend</span>
+                                <div class="skill-tag-group">
+                                    <span class="skill-tag">Flutter</span>
+                                    <span class="skill-tag">FastAPI</span>
+                                    <span class="skill-tag">Streamlit</span>
+                                    <span class="skill-tag">Android Studio</span>
+                                    <span class="skill-tag">Firebase</span>
+                                    <span class="skill-tag">REST API</span>
+                                    <span class="skill-tag">React</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category-block">
+                                <span class="skill-category-title">Tools & Platforms</span>
+                                <div class="skill-tag-group">
+                                    <span class="skill-tag">Git</span>
+                                    <span class="skill-tag">GitHub</span>
+                                    <span class="skill-tag">VS Code</span>
+                                    <span class="skill-tag">PyQt / PySide</span>
+                                    <span class="skill-tag">Figma</span>
+                                    <span class="skill-tag">Pytest</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Languages -->
+                        <div class="resume-sidebar-section">
+                            <h3 class="resume-sidebar-title">
+                                <i class="fas fa-language"></i> Spoken Languages
+                            </h3>
+                            <ul class="resume-contact-list">
+                                <li><strong>Hindi</strong> — Native Proficiency</li>
+                                <li><strong>English</strong> — Professional Proficiency</li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <!-- Right Main Content -->
+                    <div class="resume-main-content">
+                        <!-- Professional Summary -->
+                        <div class="resume-block reveal">
+                            <h3 class="resume-block-title">
+                                <i class="fas fa-user-tie"></i> Professional Summary
+                            </h3>
+                            <p style="font-size: 1.05rem; line-height: 1.85; color: var(--text-main);">
+                                Final-year B.Tech Data Science student (AKTU, graduating 2027) with a track record of shipping end-to-end data and AI projects: a Flutter health app used by 15+ beta testers, a career-recommendation model achieving ~85% accuracy across 1,200+ profiles, and a Power BI dashboard behind a 15% wastage reduction on 10,000+ transactions. Skilled in Python, SQL, machine learning (Scikit-learn, TensorFlow), and BI tools (Power BI, Tableau), with hands-on experience from data cleaning and model building to dashboarding and deployment. Seeking a Data Analyst or Machine Learning Engineer role.
+                            </p>
+                        </div>
+
+                        <!-- Education Section -->
+                        <div class="resume-block reveal">
+                            <h3 class="resume-block-title">
+                                <i class="fas fa-graduation-cap"></i> Education
+                            </h3>
+                            <div class="timeline-list">
+                                <div class="timeline-node">
+                                    <div class="timeline-header">
+                                        <h4 class="timeline-role">B.Tech, Computer Science and Engineering (Data Science)</h4>
+                                        <span class="timeline-period">2023 - 2027</span>
+                                    </div>
+                                    <div class="timeline-org">Shri Ramswaroop Memorial College of Engineering and Management (SRMCEM), AKTU</div>
+                                    <p style="margin: 0; color: var(--secondary-light); font-weight: 700; font-size: 1.05rem;">
+                                        CGPA: 7.08 / 10
+                                    </p>
+                                    <p style="margin-top: 6px; font-size: 0.92rem;">
+                                        Focused on machine learning algorithms, database management, statistical data analysis, linear algebra, and data structures.
+                                    </p>
+                                </div>
+
+                                <div class="timeline-node">
+                                    <div class="timeline-header">
+                                        <h4 class="timeline-role">Intermediate (Class XII), CBSE</h4>
+                                        <span class="timeline-period">2023</span>
+                                    </div>
+                                    <div class="timeline-org">Radient Central Academy</div>
+                                    <p style="margin: 0; font-size: 0.92rem;">
+                                        Completed Senior Secondary education with focus on Science and Mathematics.
+                                    </p>
+                                </div>
+
+                                <div class="timeline-node">
+                                    <div class="timeline-header">
+                                        <h4 class="timeline-role">High School (Class X), CBSE</h4>
+                                        <span class="timeline-period">2021</span>
+                                    </div>
+                                    <div class="timeline-org">Anwar Public School</div>
+                                    <p style="margin: 0; font-size: 0.92rem;">
+                                        Completed Secondary education under Central Board of Secondary Education.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projects & Experience -->
+                        <div id="projects" class="resume-block reveal">
+                            <h3 class="resume-block-title">
+                                <i class="fas fa-project-diagram"></i> Key Projects
+                            </h3>
+
+                            <div class="timeline-list">
+                                <!-- Project 1: FitByte -->
+                                <div class="timeline-node">
+                                    <div class="timeline-header">
+                                        <h4 class="timeline-role">FitByte — AI-Powered Health and Diet Analyzer</h4>
+                                        <span class="timeline-period">Jun 2026 - Present</span>
+                                    </div>
+                                    <div class="timeline-org">Flutter, Dart, REST API, Firebase, Android Studio, Figma</div>
+                                    <ul class="project-bullets" style="margin-top: 10px;">
+                                        <li>Built a cross-platform Android application using Flutter and Dart that analyzes user health data (age, weight, activity level) and delivers personalized AI-driven diet recommendations across 500+ food items.</li>
+                                        <li>Integrated REST APIs for real-time nutritional data and connected Firebase for authentication and cloud-synced progress tracking, reducing manual logging by approximately 80%.</li>
+                                        <li>Designed an interactive dashboard with dynamic charts for calorie, macro, and weekly fitness visualization; validated with 15+ beta testers. Used Figma for UI/UX prototyping.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Project: GazeFlow AI -->
+                                <div class="timeline-node">
+                                    <div class="timeline-header">
+                                        <h4 class="timeline-role">GazeFlow AI — Real-Time Eye & Gaze Tracking</h4>
+                                        <span class="timeline-period">2026</span>
+                                    </div>
+                                    <div class="timeline-org">Python, OpenCV, Google MediaPipe, PyQt / PySide, Computer Vision</div>
+                                    <ul class="project-bullets" style="margin-top: 10px;">
+                                        <li>Engineered an AI-powered desktop eye and gaze tracking application utilizing Python, OpenCV, and Google MediaPipe Face Landmarker for real-time facial landmarking, iris centering, and ocular gaze vector computation at 60 FPS.</li>
+                                        <li>Architected a multithreaded desktop UI using PyQt/PySide with real-time webcam ingestion, mirrored ocular telemetry feedback, and safe camera resource cleanup on disconnects.</li>
+                                        <li>Implemented high-precision geometric pupil/iris coordinate calibration and custom color-coded landmark visualization overlays for non-invasive ocular observation.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Project: PropIntel House Price Prediction -->
+                                <div class="timeline-node">
+                                    <div class="timeline-header">
+                                        <h4 class="timeline-role">PropIntel — House Price Prediction & Property Analytics Platform</h4>
+                                        <span class="timeline-period">2025 - 2026</span>
+                                    </div>
+                                    <div class="timeline-org">Python, XGBoost, Scikit-learn, FastAPI, Streamlit, SHAP, Pandas</div>
+                                    <ul class="project-bullets" style="margin-top: 10px;">
+                                        <li>Architected an end-to-end Machine Learning property valuation platform achieving 98.83% R² accuracy ($21,290 MAE / 4.10% MAPE) across 6,025 real estate properties using a log-target Super Ensemble (XGBoost, GradientBoosting, HistGradientBoosting).</li>
+                                        <li>Engineered an automated leakage-free Scikit-learn Pipeline with ColumnTransformer, domain feature engineering (luxury index, room ratios), and multi-currency valuation conversion (USD, INR Crores/Lakhs, EUR, GBP).</li>
+                                        <li>Integrated Tree SHAP explainability for feature impact transparency, a production FastAPI microservice with Pydantic validation, a multi-tab Streamlit analytics dashboard, and a 17/17 passing Pytest suite.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Project 2: Personalized Career Adviser System -->
+                                <div class="timeline-node">
+                                    <div class="timeline-header">
+                                        <h4 class="timeline-role">Personalized Career Adviser System (MentEra)</h4>
+                                        <span class="timeline-period">Sep 2025 - Nov 2025</span>
+                                    </div>
+                                    <div class="timeline-org">Python, Machine Learning, Scikit-learn, ChatGPT API</div>
+                                    <ul class="project-bullets" style="margin-top: 10px;">
+                                        <li>Built a career recommendation system trained on 1,200+ student profiles using decision trees, K-means clustering, and collaborative filtering, achieving approximately 85% accuracy on test data.</li>
+                                        <li>Integrated the ChatGPT API to generate personalized learning roadmaps based on skill-gap analysis, building an end-to-end pipeline with Python and Scikit-learn.</li>
+                                        <li>Represented student career advisory innovation in the Smart India Hackathon (SIH 2025).</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Project 3: Cafe Sales Data Analysis -->
+                                <div class="timeline-node">
+                                    <div class="timeline-header">
+                                        <h4 class="timeline-role">Cafe Sales Data Analysis</h4>
+                                        <span class="timeline-period">Jun 2025</span>
+                                    </div>
+                                    <div class="timeline-org">Python, Pandas, Matplotlib, Power BI</div>
+                                    <ul class="project-bullets" style="margin-top: 10px;">
+                                        <li>Analyzed 10,000+ sales transactions across 6 months, identifying 3 peak revenue periods and top-selling SKUs, contributing to a 15% reduction in estimated wastage.</li>
+                                        <li>Built an interactive Power BI dashboard consolidating KPIs across customer behavior, revenue trends, and product performance for management reporting.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Project 4: Personal Portfolio Website -->
+                                <div class="timeline-node">
+                                    <div class="timeline-header">
+                                        <h4 class="timeline-role">Personal Portfolio Website</h4>
+                                        <span class="timeline-period">Mar 2024 - Apr 2024</span>
+                                    </div>
+                                    <div class="timeline-org">HTML, CSS, JavaScript, React</div>
+                                    <ul class="project-bullets" style="margin-top: 10px;">
+                                        <li>Designed and developed a fully responsive portfolio website using React, deployed via GitHub Pages with interactive UI components, GitHub repository links, and optimized performance.</li>
+                                        <li>Integrated an interactive AI assistant clone trained on personal resume credentials and project data.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certifications Section -->
+                        <div class="resume-block reveal">
+                            <h3 class="resume-block-title">
+                                <i class="fas fa-certificate"></i> Certifications
+                            </h3>
+                            <div class="cert-grid">
+                                <div class="cert-card">
+                                    <div class="cert-icon">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <div class="cert-info">
+                                        <h4>Data Science with Machine Learning</h4>
+                                        <p>SRDT</p>
+                                    </div>
+                                </div>
+
+                                <div class="cert-card">
+                                    <div class="cert-icon">
+                                        <i class="fas fa-laptop-code"></i>
+                                    </div>
+                                    <div class="cert-info">
+                                        <h4>Machine Learning Fundamentals</h4>
+                                        <p>Online Professional Certification</p>
+                                    </div>
+                                </div>
+
+                                <div class="cert-card">
+                                    <div class="cert-icon">
+                                        <i class="fab fa-python"></i>
+                                    </div>
+                                    <div class="cert-info">
+                                        <h4>Python for Data Analysis</h4>
+                                        <p>Online Professional Certification</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    <div id="skills" class="sidebar-section">
-                        <h2>Skills & Expertise</h2>
-                        
-                        <div class="skill-group" style="margin-bottom: 20px;">
-                            <strong style="color: var(--secondary-color); font-size: 0.9rem; display: block; margin-bottom: 8px;">Languages & Web</strong>
-                            <div class="skill-badges" style="display: flex; flex-wrap: wrap; gap: 6px;">
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Python</span>
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Dart</span>
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">JavaScript</span>
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">React</span>
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">HTML/CSS</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-group" style="margin-bottom: 20px;">
-                            <strong style="color: var(--secondary-color); font-size: 0.9rem; display: block; margin-bottom: 8px;">Mobile Development</strong>
-                            <div class="skill-badges" style="display: flex; flex-wrap: wrap; gap: 6px;">
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Flutter</span>
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Firebase</span>
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">REST APIs</span>
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Android Studio</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-group" style="margin-bottom: 20px;">
-                            <strong style="color: var(--secondary-color); font-size: 0.9rem; display: block; margin-bottom: 8px;">Data & ML</strong>
-                            <div class="skill-badges" style="display: flex; flex-wrap: wrap; gap: 6px;">
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Pandas</span>
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Matplotlib</span>
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Power BI</span>
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Tableau</span>
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Scikit-learn</span>
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">SQL</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-group">
-                            <strong style="color: var(--secondary-color); font-size: 0.9rem; display: block; margin-bottom: 8px;">UI/UX & DevOps</strong>
-                            <div class="skill-badges" style="display: flex; flex-wrap: wrap; gap: 6px;">
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Figma</span>
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Git & GitHub</span>
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">Advanced Excel</span>
-                                <span class="skill-badge" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--text-color);">GenAI Tools</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sidebar-section">
-                        <h2>Languages</h2>
-                        <ul class="skills-list">
-                            <li>
-                                <span class="skill-name">Hindi (Native)</span>
-                                <div class="progress-bar"><span data-width="100%"></span></div>
-                            </li>
-                            <li>
-                                <span class="skill-name">English (Professional)</span>
-                                <div class="progress-bar"><span data-width="80%"></span></div>
-                            </li>
-                        </ul>
-                    </div>
-                </aside>
-
-                <div class="resume-main-content">
-                    <section class="main-section">
-                        <h2><i class="fas fa-user-tie"></i> Professional Summary</h2>
-                        <p>B.Tech Computer Science Engineering student specializing in Data Science, with strong analytical skills and hands-on experience in Python, web development (HTML, CSS, JavaScript, React), mobile app engineering (Flutter, Firebase), and data visualization using tools like Matplotlib, Power BI, and Tableau.</p>
-                    </section>
-
-                    <section class="main-section">
-                        <h2><i class="fas fa-briefcase"></i> Experience & Projects</h2>
-                        <div class="timeline">
-                            <div class="resume-item">
-                                <div class="item-header">
-                                    <h3>Student Developer</h3>
-                                    <span class="date">2023 - Present</span>
-                                </div>
-                                <p class="location">ML & Web/Mobile Development</p>
-                                <ul>
-                                    <li>Built **FitByte**, an AI-powered fitness app using Flutter and Firebase, featuring interactive calorie tracking dashboards.</li>
-                                    <li>Performed in-depth Cafe Sales Data Analysis using Pandas and Matplotlib, discovering business trends to optimize operations.</li>
-                                    <li>Deploys full-stack portfolio systems integrating custom client-side AI clone assistants.</li>
-                                </ul>
-                            </div>
-                            <div class="resume-item">
-                                <div class="item-header">
-                                    <h3>Smart India Hackathon 2025</h3>
-                                    <span class="date">2024 - 2025</span>
-                                </div>
-                                <p class="location">Participant & Core Developer</p>
-                                <ul>
-                                    <li>Designed and implemented **MentEra** (AI Career Advisor), mapping student profiles to career resources.</li>
-                                    <li>Integrated machine learning algorithms (decision trees, clustering) for personalized path predictions.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="main-section">
-                        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-                        <div class="timeline">
-                            <div class="resume-item">
-                                <div class="item-header">
-                                    <h3>B.Tech, Computer Science (Data Science)</h3>
-                                    <span class="date">2023 - 2027</span>
-                                </div>
-                                <p class="location">SRMCEM, AKTU | Lucknow, UP</p>
-                                <p style="color: var(--secondary-color); font-weight: 500; font-size: 0.95rem;">CGPA: 7.0</p>
-                            </div>
-                            <div class="resume-item">
-                                <div class="item-header">
-                                    <h3>Intermediate (CBSE)</h3>
-                                    <span class="date">Completed: 2023</span>
-                                </div>
-                                <p class="location">Radient Central Academy | percentage: 64.17%</p>
-                            </div>
-                            <div class="resume-item">
-                                <div class="item-header">
-                                    <h3>High School</h3>
-                                    <span class="date">Completed: 2021</span>
-                                </div>
-                                <p class="location">Anwar Public School | percentage: 62.80%</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="main-section">
-                        <h2><i class="fas fa-award"></i> Certifications</h2>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
-                                <i class="fas fa-certificate" style="color: var(--secondary-color);"></i>
-                                <span><strong>Data Science with Machine Learning</strong> – SRDT (2024)</span>
-                            </li>
-                            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
-                                <i class="fas fa-certificate" style="color: var(--secondary-color);"></i>
-                                <span><strong>Machine Learning Fundamentals</strong> – Online Certification (2024)</span>
-                            </li>
-                            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
-                                <i class="fas fa-certificate" style="color: var(--secondary-color);"></i>
-                                <span><strong>Python for Data Analysis</strong> – Online Certification (2023)</span>
-                            </li>
-                        </ul>
-                    </section>
                 </div>
             </div>
         </main>
-        
-        <footer>
-            <div class="social-links">
-                <a href="https://github.com/harshupadhyay750" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/harsh-upadhyay-802049297" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/harsh_upadhyay__" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p>&copy; 2026 by Harsh Upadhyay. All rights reserved.</p>
-        </footer>
 
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-socials">
+                    <a href="https://github.com/harshupadhyay750" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/harsh-upadhyay-802049297" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:harshupadhysy750@gmail.com" class="footer-social-link" aria-label="Email Harsh">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.instagram.com/harsh_upadhyay__" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram Profile">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <p class="footer-copy">
+                    &copy; 2026 Harsh Upadhyay. All rights reserved. • B.Tech Data Science (AKTU, SRMCEM)
+                </p>
+            </div>
+        </footer>
     </div>
 
-    <!-- AI Assistant Floating UI -->
+    <!-- AI Assistant Floating Widget -->
     <div class="ai-chat-widget">
-        <button id="chat-toggle" class="chat-toggle-btn">
+        <button id="chat-toggle" class="chat-toggle-btn" aria-label="Open Harsh's AI assistant">
             <i class="fas fa-robot"></i> Ask AI Harsh
         </button>
+
         <div id="chat-window" class="chat-window hidden-chat" aria-hidden="true">
             <div class="chat-header">
                 <div class="chat-header-info">
-                    <i class="fas fa-robot"></i>
-                    <strong>Harsh's AI Clone</strong>
+                    <div class="chat-bot-avatar">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="chat-header-text">
+                        <strong>Harsh's AI Clone</strong>
+                        <span>Online • Resume Knowledge v2026</span>
+                    </div>
                 </div>
-                <button id="chat-close" class="close-btn" aria-label="Close chat">
+                <button id="chat-close" class="close-btn" aria-label="Close AI chat">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
+
             <div id="chat-messages" class="chat-messages">
-                <div class="message ai-message">Hi! I'm Harsh's personal AI clone. Ask me about my projects, skills, certifications, or contact info.</div>
+                <div class="message ai-message">
+                    Hi! I'm <strong>Harsh's AI clone</strong>. You can ask me about his B.Tech Data Science CGPA (7.08/10), his technical skills, or his projects!
+                </div>
             </div>
+
             <div class="suggestion-chips-container">
                 <div class="suggestion-chips-title">Suggested Topics</div>
                 <div class="suggestion-chips">
-                    <button class="chip" data-query="Tell me about FitByte project">FitByte App</button>
-                    <button class="chip" data-query="What is the MentEra Career Advisor?">MentEra AI</button>
+                    <button class="chip" data-query="What is your CGPA and education?">Education & CGPA</button>
                     <button class="chip" data-query="What skills do you have?">Technical Skills</button>
+                    <button class="chip" data-query="Tell me about the FitByte project">FitByte App</button>
+                    <button class="chip" data-query="Tell me about Cafe Sales Data Analysis">Cafe Sales Analysis</button>
                     <button class="chip" data-query="Show me your certifications">Certifications</button>
-                    <button class="chip" data-query="How can I contact you?">Contact Info</button>
-                    <button class="chip" data-query="Tell me about your education">Education</button>
                 </div>
             </div>
+
             <div class="chat-input-area">
-                <input id="chat-input" type="text" placeholder="Ask me something..." aria-label="Chat input">
-                <button id="chat-send" aria-label="Send message">
+                <input id="chat-input" type="text" placeholder="Ask about Harsh's resume..." aria-label="Chat input query">
+                <button id="chat-send" aria-label="Send message to AI">
                     <i class="fas fa-paper-plane"></i>
                 </button>
             </div>
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>

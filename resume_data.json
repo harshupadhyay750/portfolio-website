@@ -1,150 +1,162 @@
 {
   "personal_info": {
     "name": "Harsh Upadhyay",
-    "title": "Data Science Student | ML & Web Developer",
+    "title": "B.Tech Data Science Student | Aspiring Data Analyst & Machine Learning Engineer",
     "location": "Lucknow, Uttar Pradesh, India",
-    "email": "harshupadhyay750@gmail.com",
+    "email": "harshupadhysy750@gmail.com",
+    "secondary_email": "harshupadhyay750@gmail.com",
     "phone": "9648581101",
     "linkedin": "https://www.linkedin.com/in/harsh-upadhyay-802049297",
     "github": "https://github.com/harshupadhyay750"
   },
 
   "profile": {
-    "summary": "A passionate B.Tech Computer Science (Data Science) student with strong analytical thinking and development skills. Experienced in building data-driven applications, machine learning models, and full-stack web solutions.",
-    "objective": "To leverage data science and software development skills to build impactful and scalable digital solutions."
+    "summary": "Final-year B.Tech Data Science student (AKTU, graduating 2027) with a track record of shipping end-to-end data and AI projects: a Flutter health app used by 15+ beta testers, a career-recommendation model achieving ~85% accuracy across 1,200+ profiles, and a Power BI dashboard behind a 15% wastage reduction on 10,000+ transactions. Skilled in Python, SQL, machine learning (Scikit-learn, TensorFlow), and BI tools (Power BI, Tableau), with hands-on experience from data cleaning and model building to dashboarding and deployment. Seeking a Data Analyst or Machine Learning Engineer role.",
+    "objective": "Seeking a Data Analyst or Machine Learning Engineer role to deploy end-to-end data pipelines, predictive models, and intuitive dashboards that create measurable business impact."
+  },
+
+  "metrics": {
+    "beta_testers": "15+",
+    "model_accuracy": "~85%",
+    "profiles_analyzed": "1,200+",
+    "transactions_processed": "10,000+",
+    "wastage_reduction": "15%",
+    "cgpa": "7.08 / 10"
   },
 
   "education": [
     {
-      "degree": "B.Tech in Computer Science (Data Science)",
-      "university": "Dr. A.P.J. Abdul Kalam Technical University (AKTU)",
-      "college": "SRMCEM, Lucknow",
-      "cgpa": "7.0",
-      "duration": "2023 - 2027"
+      "degree": "B.Tech, Computer Science and Engineering (Data Science)",
+      "institution": "Shri Ramswaroop Memorial College of Engineering and Management (SRMCEM), AKTU",
+      "location": "Lucknow, Uttar Pradesh",
+      "cgpa": "7.08 / 10",
+      "duration": "2023 - 2027",
+      "status": "Final Year / Pursuing"
+    },
+    {
+      "degree": "Intermediate (Class XII), CBSE",
+      "institution": "Radient Central Academy",
+      "year": "2023"
+    },
+    {
+      "degree": "High School (Class X), CBSE",
+      "institution": "Anwar Public School",
+      "year": "2021"
     }
   ],
 
-  "skills": {
-    "programming": ["Python", "JavaScript", "SQL"],
-    "data_science": ["Pandas", "NumPy", "Matplotlib", "Machine Learning"],
-    "web_development": ["HTML", "CSS", "JavaScript", "React"],
-    "tools": ["Power BI", "Tableau", "Advanced Excel"],
-    "other": ["Cloud Computing", "Generative AI"]
+  "technical_skills": {
+    "programming_languages": ["Python", "Dart", "JavaScript", "SQL", "HTML", "CSS"],
+    "machine_learning_ai": ["Scikit-learn", "XGBoost", "OpenCV", "MediaPipe", "TensorFlow (basic)", "ChatGPT API", "Generative AI Tools", "SHAP (Explainable AI)", "Decision Trees", "K-Means Clustering"],
+    "data_analytics": ["Pandas", "Matplotlib", "Power BI", "Tableau", "Advanced Excel", "SQL", "Data Cleaning", "Data Visualization", "Exploratory Data Analysis (EDA)"],
+    "mobile_web_development": ["Flutter", "FastAPI", "Streamlit", "Android Studio", "Firebase", "REST API Integration", "React", "HTML5/CSS3"],
+    "tools_platforms": ["Git", "GitHub", "VS Code", "PyQt / PySide", "Figma", "Data Cleaning", "Data Visualization"]
   },
 
   "projects": [
     {
-      "name": "MentEra: AI Career Advisor",
-      "category": "AI / Machine Learning",
-      "tech_stack": ["Python", "Machine Learning", "React", "Node.js"],
-      "description": "Developed an intelligent career recommendation system that maps personalized career paths based on user data.",
-      "features": [
-        "ML-based recommendation engine",
-        "User profiling system",
-        "Career path prediction"
+      "name": "FitByte — AI-Powered Health and Diet Analyzer",
+      "period": "Jun 2026 - Present",
+      "category": "Mobile & AI",
+      "tech_stack": ["Flutter", "Dart", "REST API", "Firebase", "Android Studio", "Figma"],
+      "image": "fitbyte_preview.jpg",
+      "bullets": [
+        "Built a cross-platform Android application using Flutter and Dart that analyzes user health data (age, weight, activity level) and delivers personalized AI-driven diet recommendations across 500+ food items.",
+        "Integrated REST APIs for real-time nutritional data and connected Firebase for authentication and cloud-synced progress tracking, reducing manual logging by approximately 80%.",
+        "Designed an interactive dashboard with dynamic charts for calorie, macro, and weekly fitness visualization; validated with 15+ beta testers. Used Figma for UI/UX prototyping."
       ],
-      "impact": "Built during Smart India Hackathon 2025 to solve real-world student career confusion.",
-      "status": "Completed"
+      "metrics": ["15+ Beta Testers", "500+ Food Items", "80% Manual Logging Reduced"],
+      "github": "https://github.com/harshupadhyay750"
     },
     {
-      "name": "Café Sales Data Analysis",
-      "category": "Data Analysis",
-      "tech_stack": ["Python", "Pandas", "Matplotlib"],
-      "description": "Performed exploratory data analysis on retail data to derive business insights.",
-      "features": [
-        "Data cleaning",
-        "Trend visualization",
-        "Customer behavior analysis"
+      "name": "Personalized Career Adviser System (MentEra)",
+      "period": "Sep 2025 - Nov 2025",
+      "category": "Machine Learning & AI",
+      "tech_stack": ["Python", "Machine Learning", "Scikit-learn", "ChatGPT API", "React", "Node.js"],
+      "image": "career_adviser_preview.jpg",
+      "bullets": [
+        "Built a career recommendation system trained on 1,200+ student profiles using decision trees, K-means clustering, and collaborative filtering, achieving approximately 85% accuracy on test data.",
+        "Integrated the ChatGPT API to generate personalized learning roadmaps based on skill-gap analysis, building an end-to-end pipeline with Python and Scikit-learn."
       ],
-      "impact": "Helped understand inventory and sales optimization.",
-      "status": "Completed"
+      "metrics": ["~85% Test Accuracy", "1,200+ Student Profiles", "Smart India Hackathon 2025"],
+      "case_study": "MentEra_SIH_2025.pdf",
+      "github": "https://github.com/harshupadhyay750"
     },
     {
-      "name": "Smart Home Analytics System",
-      "category": "IoT + Data",
-      "tech_stack": ["Cloud Computing", "Data Visualization"],
-      "description": "Built a system to monitor and visualize real-time smart home data.",
-      "features": [
-        "Real-time data pipeline",
-        "Dashboard visualization",
-        "Cloud integration"
+      "name": "Cafe Sales Data Analysis",
+      "period": "Jun 2025",
+      "category": "Data & Analytics",
+      "tech_stack": ["Python", "Pandas", "Matplotlib", "Power BI"],
+      "image": "cafe_sales_preview.jpg",
+      "bullets": [
+        "Analyzed 10,000+ sales transactions across 6 months, identifying 3 peak revenue periods and top-selling SKUs, contributing to a 15% reduction in estimated wastage.",
+        "Built an interactive Power BI dashboard consolidating KPIs across customer behavior, revenue trends, and product performance for management reporting."
       ],
-      "impact": "Bridged hardware and cloud for scalable analytics.",
-      "status": "In Progress"
+      "metrics": ["10,000+ Transactions", "15% Wastage Reduction", "Power BI Executive Dashboard"],
+      "github": "https://github.com/harshupadhyay750"
+    },
+    {
+      "name": "PropIntel — House Price Prediction & Property Analytics System",
+      "period": "2025 - 2026",
+      "category": "Machine Learning & Analytics",
+      "tech_stack": ["Python", "XGBoost", "Scikit-learn", "FastAPI", "Streamlit", "SHAP", "Pandas"],
+      "image": "house_prediction_preview.jpg",
+      "bullets": [
+        "Architected an end-to-end Machine Learning property valuation platform achieving 98.83% R² accuracy ($21,290 MAE / 4.10% MAPE) across 6,025 properties using a log-target Super Ensemble (XGBoost, GradientBoosting, HistGradientBoosting).",
+        "Engineered an automated leakage-free Scikit-learn Pipeline with ColumnTransformer, domain feature synthesis (room ratios, luxury index), and multi-currency conversion (USD, INR Crores/Lakhs, EUR, GBP).",
+        "Integrated Tree SHAP explainability for feature impact transparency, a production FastAPI REST API with Pydantic validation, a multi-tab interactive Streamlit analytics dashboard, and a 17/17 passing Pytest suite."
+      ],
+      "metrics": ["98.83% R² Accuracy", "6,025 Properties", "FastAPI & Streamlit"],
+      "github": "https://github.com/harshupadhyay750/House_Prediction"
+    },
+    {
+      "name": "GazeFlow AI — Real-Time Eye & Gaze Tracking System",
+      "period": "2026",
+      "category": "Computer Vision & AI",
+      "tech_stack": ["Python", "OpenCV", "MediaPipe", "PyQt / PySide", "Computer Vision"],
+      "image": "gazeflow_preview.jpg",
+      "bullets": [
+        "Engineered an AI-powered desktop eye and gaze tracking application utilizing Python, OpenCV, and Google MediaPipe Face Landmarker for real-time facial landmarking, iris centering, and ocular gaze vector computation.",
+        "Architected a multithreaded desktop UI using PyQt/PySide with real-time 60 FPS webcam ingestion, mirrored ocular telemetry feedback, and safe camera resource cleanup on disconnects.",
+        "Implemented high-precision geometric pupil/iris coordinate calibration and custom color-coded landmark visualization overlays for non-invasive ocular observation and assistive computing foundations."
+      ],
+      "metrics": ["Real-Time 60 FPS", "MediaPipe Landmarker", "Zero-Latency Telemetry"],
+      "github": "https://github.com/harshupadhyay750/GazeFlow_AI"
     },
     {
       "name": "Personal Portfolio Website",
+      "period": "Mar 2024 - Apr 2024",
       "category": "Web Development",
-      "tech_stack": ["HTML", "CSS", "JavaScript"],
-      "description": "Designed and developed a responsive portfolio website with integrated AI chatbot.",
-      "features": [
-        "Modern UI/UX",
-        "Chatbot integration",
-        "Responsive design"
+      "tech_stack": ["HTML", "CSS", "JavaScript", "React"],
+      "image": "harsh1.jpg",
+      "bullets": [
+        "Designed and developed a fully responsive portfolio website using React and modern vanilla web standards, deployed via GitHub Pages with interactive UI components, GitHub repository links, and optimized performance.",
+        "Engineered an integrated AI clone assistant trained on personal resume data for automated interactive recruiter inquiries."
       ],
-      "impact": "Central hub for showcasing projects and skills.",
-      "status": "Live"
-    }
-  ],
-
-  "experience": [
-    {
-      "role": "Student Developer",
-      "description": "Hands-on experience in building machine learning models, performing data analysis, and developing full-stack web applications.",
-      "skills_used": ["Python", "ML", "Web Dev", "Data Visualization"]
+      "metrics": ["100% Responsive", "Integrated AI Chatbot", "Fast Performance"],
+      "github": "https://github.com/harshupadhyay750",
+      "live_url": "index.html"
     }
   ],
 
   "certifications": [
     {
       "name": "Data Science with Machine Learning",
-      "provider": "SRDT",
-      "year": "2024"
+      "organization": "SRDT",
+      "badge_icon": "fas fa-brain",
+      "status": "Verified"
     },
     {
       "name": "Machine Learning Fundamentals",
-      "provider": "Online Certification",
-      "year": "2024"
+      "organization": "Online Certification",
+      "badge_icon": "fas fa-laptop-code",
+      "status": "Verified"
     },
     {
       "name": "Python for Data Analysis",
-      "provider": "Online Certification",
-      "year": "2023"
+      "organization": "Online Certification",
+      "badge_icon": "fab fa-python",
+      "status": "Verified"
     }
-  ],
-
-  "achievements": [
-    "Participated in Smart India Hackathon 2025",
-    "Built multiple real-world AI and data projects",
-    "Developed a full-stack portfolio with chatbot integration"
-  ],
-
-  "strengths": [
-    "Analytical thinking",
-    "Problem-solving mindset",
-    "Quick learner",
-    "Strong adaptability"
-  ],
-
-  "interests": [
-    "Artificial Intelligence",
-    "Data Science",
-    "Web Development",
-    "Startup Building"
-  ],
-
-  "chatbot_training": {
-    "common_questions": {
-      "who_are_you": "I am Harsh Upadhyay, a Data Science student and developer.",
-      "what_do_you_do": "I build AI-powered applications, analyze data, and develop web solutions.",
-      "what_are_your_skills": "I specialize in Python, Machine Learning, Data Analysis, and Web Development.",
-      "what_projects_have_you_done": "I have built AI systems, data analysis projects, and a portfolio chatbot."
-    },
-
-    "conversation_style": {
-      "tone": "professional + friendly",
-      "response_length": "short to medium",
-      "personality": "helpful, confident, technical"
-    }
-  }
+  ]
 }

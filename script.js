@@ -1,101 +1,232 @@
-// --- Scroll Animations ---
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        } else {
-            // Optional: Remove class if you want animation to repeat
-            // entry.target.classList.remove('show');
-        }
-    });
-});
+// ==========================================================================
+// HARSH UPADHYAY - INTERACTIVE PORTFOLIO LOGIC & AI CLONE
+// ==========================================================================
 
-const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach((el) => observer.observe(el));
-
-
-// --- Typed.js for typing animation ---
-if (document.getElementById('typed-text')) {
-    const typed = new Typed('#typed-text', {
-        strings: ['Web Developer', 'Data Analyst', 'Problem Solver'],
-        typeSpeed: 70,
-        backSpeed: 50,
-        backDelay: 2000,
-        loop: true,
-    });
-}
-
-
-// --- particles.js Configuration ---
-if (document.getElementById('particles-js')) {
-    particlesJS('particles-js', {
-        "particles": {
-            "number": {
-                "value": 60,
-                "density": {
-                    "enable": true,
-                    "value_area": 800
-                }
-            },
-            "color": {
-                "value": "#9d5dff"
-            },
-            "shape": {
-                "type": "circle"
-            },
-            "opacity": {
-                "value": 0.4,
-                "random": true,
-                "anim": {
-                    "enable": true,
-                    "speed": 1,
-                    "opacity_min": 0.1,
-                    "sync": false
-                }
-            },
-            "size": {
-                "value": 3,
-                "random": true
-            },
-            "line_linked": {
-                "enable": true,
-                "distance": 150,
-                "color": "#ffffff",
-                "opacity": 0.1,
-                "width": 1
-            },
-            "move": {
-                "enable": true,
-                "speed": 2,
-                "direction": "none",
-                "out_mode": "out",
-                "bounce": false
-            }
-        },
-        "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-                "onhover": {
-                    "enable": true,
-                    "mode": "repulse"
-                },
-                "onclick": {
-                    "enable": false
-                }
-            },
-            "modes": {
-                "repulse": {
-                    "distance": 100,
-                    "duration": 0.4
-                }
-            }
-        },
-        "retina_detect": true
-    });
-}
-
-// --- AI Chatbot Widget Logic ---
 document.addEventListener('DOMContentLoaded', () => {
+    // --- 1. Mobile Navigation Toggle ---
+    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileToggle && navLinks) {
+        mobileToggle.addEventListener('click', () => {
+            const isActive = navLinks.classList.toggle('active');
+            mobileToggle.setAttribute('aria-expanded', String(isActive));
+            const icon = mobileToggle.querySelector('i');
+            if (icon) {
+                if (isActive) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+
+        // Close menu when clicking outside or clicking any nav link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                if (mobileToggle.querySelector('i')) {
+                    mobileToggle.querySelector('i').classList.remove('fa-times');
+                    mobileToggle.querySelector('i').classList.add('fa-bars');
+                }
+            });
+        });
+    }
+
+    // --- 2. Header Scroll Effect ---
+    const siteHeader = document.querySelector('.site-header');
+    if (siteHeader) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                siteHeader.classList.add('scrolled');
+            } else {
+                siteHeader.classList.remove('scrolled');
+            }
+        });
+    }
+
+    // --- 3. Scroll Reveal Animations ---
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                entry.target.classList.add('active');
+            }
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.hidden, .reveal').forEach(el => revealObserver.observe(el));
+
+    // --- 4. Typed.js Initialization ---
+    const typedTarget = document.getElementById('typed-text');
+    if (typedTarget && typeof Typed !== 'undefined') {
+        new Typed('#typed-text', {
+            strings: [
+                'Data into Predictive Intelligence',
+                '1,200+ Profiles into AI Career Insights',
+                'Flutter & Firebase into Real-World Apps',
+                '10,000+ Transactions into Business Growth',
+                'Ideas into Scalable Digital Solutions'
+            ],
+            typeSpeed: 45,
+            backSpeed: 25,
+            backDelay: 1500,
+            startDelay: 400,
+            smartBackspace: true,
+            loop: true
+        });
+    }
+
+    // --- 5. particles.js Configuration ---
+    if (document.getElementById('particles-js') && typeof particlesJS !== 'undefined') {
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 55,
+                    "density": {
+                        "enable": true,
+                        "value_area": 850
+                    }
+                },
+                "color": {
+                    "value": ["#a855f7", "#06b6d4", "#ffffff"]
+                },
+                "shape": {
+                    "type": "circle"
+                },
+                "opacity": {
+                    "value": 0.35,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 0.8,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 2.5,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 140,
+                    "color": "#a855f7",
+                    "opacity": 0.12,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1.4,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "window",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": false
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 0.35
+                        }
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    }
+
+    // --- 6. Click-to-Copy with Toast Notification ---
+    const showToast = (text) => {
+        let toast = document.getElementById('global-toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'global-toast';
+            toast.className = 'toast-notice';
+            document.body.appendChild(toast);
+        }
+        toast.innerHTML = `<i class="fas fa-check-circle" style="color: #10b981;"></i> ${text}`;
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2800);
+    };
+
+    document.querySelectorAll('[data-copy]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const textToCopy = btn.getAttribute('data-copy');
+            if (navigator.clipboard && textToCopy) {
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    showToast(`Copied "${textToCopy}" to clipboard!`);
+                }).catch(() => {
+                    showToast('Copied to clipboard!');
+                });
+            }
+        });
+    });
+
+    // --- 7. Project Filtering Logic ---
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const projectCards = document.querySelectorAll('.project-item');
+
+    if (filterPills.length > 0 && projectCards.length > 0) {
+        filterPills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                filterPills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+
+                const filterCategory = pill.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category') || '';
+                    const categories = cardCategory.split(/\s+/);
+                    if (filterCategory === 'all' || categories.includes(filterCategory)) {
+                        card.classList.remove('filtered-out');
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(15px)';
+                        setTimeout(() => {
+                            card.style.transition = 'all 0.4s ease';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        card.classList.add('filtered-out');
+                    }
+                });
+            });
+        });
+    }
+
+    // --- 8. Print Resume Trigger ---
+    const printBtn = document.getElementById('print-resume-btn');
+    if (printBtn) {
+        printBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.print();
+        });
+    }
+
+    // --- 9. AI Harsh Knowledge Base & Clone Logic ---
     const chatToggle = document.getElementById('chat-toggle');
     const chatWindow = document.getElementById('chat-window');
     const chatClose = document.getElementById('chat-close');
@@ -104,147 +235,162 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatSend = document.getElementById('chat-send');
     const suggestionChips = document.querySelectorAll('.suggestion-chips .chip');
 
-    // Return mock response based on resume contents
-    const getLocalAIResponse = (query) => {
+    const getHarshAIResponse = (query) => {
         const text = query.toLowerCase().trim();
-        if (!text) {
-            return 'Please enter a question so I can help you.';
-        }
+        if (!text) return "Please ask a question and I'll be glad to help!";
 
         // GREETINGS
-        if (/hello|hi|hey|greetings|wassup|sup|good morning|good afternoon/.test(text)) {
-            return "Hey there! 👋 I am Harsh's AI clone, trained on his professional resume and portfolio. How can I help you today? You can ask about my projects, skills, or how to contact me!";
+        if (/^(hi|hello|hey|hola|greetings|wassup|sup|good morning|good evening)/i.test(text)) {
+            return "Hey there! 👋 I'm **Harsh Upadhyay's AI Clone**, trained on his real-world resume and portfolio projects. Feel free to ask about my AI projects, data analytics track record, tech skills, education at AKTU, or contact details!";
         }
 
         // FITBYTE
-        if (/fitbyte|fit byte|health|diet|nutrition|calorie|fitness|flutter/.test(text)) {
-            return "FitByte is an AI-Powered Health & Diet Analyser mobile application built with Flutter, Dart, and Firebase. It analyzes health data (age, weight, activity level) and offers personalized AI recommendations. Features include REST API integrations for real-time nutrition info, a Firebase backend, and an interactive dashboard with charts showing calorie intake and macro breakdown.";
+        if (/fitbyte|fit byte|health|diet|nutrition|calorie|meal/i.test(text)) {
+            return "📱 **FitByte — AI-Powered Health and Diet Analyzer** (Jun 2026 - Present)\n" +
+                   "• **Tech Stack**: Flutter, Dart, REST API, Firebase, Android Studio, Figma.\n" +
+                   "• **Features**: Cross-platform Android app analyzing user metrics (age, weight, activity level) delivering personalized AI recommendations across **500+ food items**.\n" +
+                   "• **Backend & Sync**: Connected REST APIs for real-time nutrition data and Firebase authentication/progress sync, reducing manual logging by **~80%**.\n" +
+                   "• **Impact**: Validated with **15+ beta testers** with interactive charts for calorie, macro, and weekly fitness visualization.";
         }
 
-        // MENTERA / CAREER ADVISOR
-        if (/mentera|ment era|career|advisor|adviser|guidance|smart india hackathon|sih|hackathon/.test(text)) {
-            return "MentEra (AI Career Advisor) was built during the Smart India Hackathon 2025. It maps personalized career paths using machine learning models (decision trees, clustering) based on student academic profiles and skill sets. Developed with Python (Scikit-learn), React, Node.js, and MongoDB, it features career path predictions, user profiling, and AI career recommendations.";
+        // CAREER ADVISER / MENTERA
+        if (/career|adviser|advisor|mentera|sih|hackathon|recommendation/i.test(text)) {
+            return "🧠 **Personalized Career Adviser System (MentEra)** (Sep 2025 - Nov 2025)\n" +
+                   "• **Tech Stack**: Python, Scikit-learn, ChatGPT API, Machine Learning, React, Node.js.\n" +
+                   "• **Core Engine**: Trained on **1,200+ student profiles** utilizing Decision Trees, K-Means Clustering, and Collaborative Filtering.\n" +
+                   "• **Accuracy**: Achieved **~85% accuracy** on test data.\n" +
+                   "• **Generative AI**: Integrated ChatGPT API to generate dynamic skill-gap roadmaps and learning trajectories.\n" +
+                   "• Case study available on the Projects page (Smart India Hackathon 2025).";
+        }
+
+        // GAZEFLOW AI / COMPUTER VISION
+        if (/gazeflow|gaze|eye|iris|vision|opencv|mediapipe|pupil|tracking/i.test(text)) {
+            return "👁️ **GazeFlow AI — Real-Time Eye & Gaze Tracking System** (2026)\n" +
+                   "• **Tech Stack**: Python, OpenCV, Google MediaPipe Face Landmarker, PyQt / PySide, Computer Vision.\n" +
+                   "• **Core Capabilities**: High-speed real-time webcam tracking at **60 FPS** calculating facial landmarks, iris centerpoints, and ocular gaze orientation vectors.\n" +
+                   "• **Architecture**: Multithreaded GUI running a zero-latency pipeline with mirrored preview overlays, color-coded landmarks, and hardware disconnect safeguards.\n" +
+                   "• **Open Source**: Full repository available on GitHub: [github.com/harshupadhyay750/GazeFlow_AI](https://github.com/harshupadhyay750/GazeFlow_AI).";
+        }
+
+        // HOUSE PREDICTION / PROPINTEL
+        if (/house|propintel|property|real estate|xgboost|valuation|pricing|housing|fastapi|streamlit|shap/i.test(text)) {
+            return "🏠 **PropIntel — House Price Prediction & Property Analytics Platform** (2025 - 2026)\n" +
+                   "• **Tech Stack**: Python, XGBoost, Scikit-learn, FastAPI, Streamlit, SHAP, Pandas, Pytest.\n" +
+                   "• **Model Performance**: **98.83% R² Accuracy** ($21,290 MAE / 4.10% MAPE) trained across **6,025 real estate properties** using a log-target Super Ensemble (XGBoost + GradientBoosting + HistGradientBoosting).\n" +
+                   "• **Data Pipeline**: Automated leak-free ColumnTransformer pipeline with domain feature engineering (luxury index, room ratios) and multi-currency valuation (USD, INR Crores/Lakhs, EUR, GBP).\n" +
+                   "• **Deployment**: Production FastAPI REST microservice with Pydantic validation, interactive multi-tab Streamlit dashboard, Tree SHAP explainability, and 17/17 passing Pytest suite.\n" +
+                   "• **Open Source**: Full repository on GitHub: [github.com/harshupadhyay750/House_Prediction](https://github.com/harshupadhyay750/House_Prediction).";
         }
 
         // CAFE SALES DATA ANALYSIS
-        if (/cafe|sales|retail|business insights|customer behavior|café/.test(text)) {
-            return "The Cafe Sales Data Analysis project used Python, Pandas, and Matplotlib to clean, analyze, and visualize retail sales data. Harsh derived actionable insights on customer behavior, peak sales periods, and top-selling items to optimize inventory and improve business performance.";
+        if (/cafe|sales|power bi|wastage|retail|transactions/i.test(text)) {
+            return "📊 **Cafe Sales Data Analysis** (Jun 2025)\n" +
+                   "• **Tech Stack**: Python, Pandas, Matplotlib, Power BI.\n" +
+                   "• **Scale**: Analyzed **10,000+ sales transactions** across 6 months.\n" +
+                   "• **Business Impact**: Identified 3 peak revenue periods and top-performing SKUs, contributing directly to a **15% reduction in estimated wastage**.\n" +
+                   "• Built an interactive Power BI executive dashboard consolidating customer behavior KPIs, product performance, and revenue trends.";
         }
 
         // BIKE SALES DATA ANALYSIS
-        if (/bike|sales|analysis|outlier|clean|bikesale/.test(text)) {
-            return "The Bike Sales Data Analysis project is a comprehensive business analysis of retail bike transactions. Harsh performed extensive data cleaning, outlier detection, and feature engineering in Python (Pandas, NumPy, Matplotlib) to visualize key performance indicators and drive strategic sales growth.";
+        if (/bike|bikesale/i.test(text)) {
+            return "🚲 **Bike Sales Data Analysis**:\n" +
+                   "An exploratory data analysis (EDA) project built with Python, Pandas, NumPy, and Matplotlib. Performed comprehensive data cleaning, outlier handling, and visualization of customer demographics and purchasing patterns. Case study PDF is downloadable on the Projects page!";
         }
 
-        // SMART HOME ANALYTICS
-        if (/smart home|iot|smart-home|sensor|analytics system|device/.test(text)) {
-            return "The Smart Home Analytics System is an ongoing project designed to monitor and visualize real-time smart home sensor data. Built using Cloud Computing and Data Visualization tools, it creates a scalable real-time data pipeline from hardware to interactive dashboards.";
+        // SKILLS / TECH STACK
+        if (/skill|skills|stack|tech|technologies|tools|languages|programming/i.test(text)) {
+            return "💻 **Harsh's Technical Arsenal**:\n\n" +
+                   "• **Programming Languages**: Python, Dart, JavaScript, SQL, HTML, CSS\n" +
+                   "• **Machine Learning & AI**: Scikit-learn, XGBoost, OpenCV, Google MediaPipe, TensorFlow (basic), ChatGPT API, SHAP (Explainable AI), Decision Trees, K-Means Clustering\n" +
+                   "• **Data & Analytics**: Pandas, Matplotlib, Power BI, Tableau, Advanced Excel, SQL, Data Cleaning & EDA\n" +
+                   "• **Mobile, Web & Backend**: Flutter, FastAPI, Streamlit, Android Studio, Firebase, REST API Integration, React\n" +
+                   "• **Tools & Platforms**: Git, GitHub, VS Code, PyQt / PySide, Figma, Pytest";
         }
 
-        // SKILLS
-        if (/skill|skills|tech|stack|programming|languages|technologies|toolbox|what do you do/.test(text)) {
-            return "Harsh's technical skillset is divided into several areas:\n\n" +
-                   "💻 Languages: Python, Dart, SQL, JavaScript, HTML/CSS\n" +
-                   "📱 Mobile Dev: Flutter, Android Studio, Firebase, REST APIs\n" +
-                   "📊 Data & Analytics: Pandas, Matplotlib, Power BI, Tableau, Advanced Excel\n" +
-                   "🧠 ML & AI: Scikit-learn, TensorFlow (basic), Generative AI\n" +
-                   "🎨 UI/UX & Design: Figma, Responsive Design\n" +
-                   "🛠️ Tools & DevOps: Git & GitHub, Data Cleaning & Visualization";
-        }
-
-        // EDUCATION
-        if (/education|college|aktu|srmcem|school|degree|cgpa|btech|b.tech|university/.test(text)) {
-            return "Harsh is pursuing a B.Tech in Computer Science Engineering (specializing in Data Science) at SRMCEM, AKTU (2023 - 2027) with a CGPA of 7.0.\n\n" +
-                   "He completed his Intermediate education from Radient Central Academy (CBSE) with 64.17% (2023) and his High School education from Anwar Public School with 62.80% (2021).";
+        // EDUCATION & CGPA
+        if (/education|college|aktu|srmcem|cgpa|marks|degree|btech|school/i.test(text)) {
+            return "🎓 **Education Overview**:\n\n" +
+                   "• **B.Tech, Computer Science & Engineering (Data Science)** — SRMCEM, AKTU (2023 - 2027)\n" +
+                   "  🎯 **CGPA: 7.08 / 10** (Final-year student graduating 2027)\n" +
+                   "• **Intermediate (Class XII), CBSE** — Radient Central Academy (2023)\n" +
+                   "• **High School (Class X), CBSE** — Anwar Public School (2021)";
         }
 
         // CERTIFICATIONS
-        if (/certification|certifications|certificate|certified|courses|srdt/.test(text)) {
-            return "Harsh holds the following professional certifications:\n\n" +
-                   "🏆 Data Science with Machine Learning – issued by SRDT (2024)\n" +
-                   "🏆 Machine Learning Fundamentals – Online Certification (2024)\n" +
-                   "🏆 Python for Data Analysis – Online Certification (2023)";
+        if (/certification|certificate|certified|srdt|courses/i.test(text)) {
+            return "🏆 **Professional Certifications**:\n\n" +
+                   "1. **Data Science with Machine Learning** — SRDT\n" +
+                   "2. **Machine Learning Fundamentals** — Online Certification\n" +
+                   "3. **Python for Data Analysis** — Online Certification";
         }
 
-        // EXPERIENCE / ROLE
-        if (/experience|internship|job|developer|work|role|student developer/.test(text)) {
-            return "Harsh has hands-on project experience as a Student Developer and Hackathon Participant:\n\n" +
-                   "🚀 Smart India Hackathon 2025: Developed MentEra, an AI-powered career advisor using machine learning.\n" +
-                   "🛠️ Student Developer: Designed and deployed machine learning models, performed exploratory data analysis, and built full-stack web applications using Python, JS, React, and Flutter.";
+        // SUMMARY / ROLES SEEKING
+        if (/summary|about|role|who are you|seeking|job|hire|position/i.test(text)) {
+            return "Harsh Upadhyay is a final-year B.Tech Data Science student (SRMCEM, AKTU 2027) actively seeking a **Data Analyst** or **Machine Learning Engineer** role. He has shipped end-to-end AI and data solutions: a Flutter health app with 15+ beta testers, an 85% accurate career model on 1,200+ profiles, and a Power BI dashboard yielding 15% wastage reduction across 10k+ records.";
         }
 
-        // CONTACT
-        if (/contact|email|phone|call|reach|connect|linkedin|github|location|where do you live|address/.test(text)) {
-            return "You can reach Harsh through the following channels:\n\n" +
-                   "📧 Email: harshupadhyay750@gmail.com\n" +
-                   "📞 Phone: +91 9648581101\n" +
-                   "📍 Location: Lucknow, Uttar Pradesh, India\n" +
-                   "🔗 LinkedIn: linkedin.com/in/harsh-upadhyay-802049297\n" +
-                   "🐙 GitHub: github.com/harshupadhyay750\n\n" +
-                   "Feel free to drop a line or use the contact form on the contact page!";
+        // CONTACT / REACH OUT
+        if (/contact|email|phone|number|reach|message|linkedin|github|location|address|call/i.test(text)) {
+            return "📬 **Contact Details**:\n\n" +
+                   "• **Location**: Lucknow, Uttar Pradesh, India\n" +
+                   "• **Phone**: [+91 9648581101](tel:9648581101)\n" +
+                   "• **Email**: [harshupadhysy750@gmail.com](mailto:harshupadhysy750@gmail.com)\n" +
+                   "• **LinkedIn**: [linkedin.com/in/harsh-upadhyay-802049297](https://www.linkedin.com/in/harsh-upadhyay-802049297)\n" +
+                   "• **GitHub**: [github.com/harshupadhyay750](https://github.com/harshupadhyay750)\n\n" +
+                   "Feel free to send a message via the Contact page!";
         }
 
-        // GENERAL PROJECTS
-        if (/portfolio|site|website|code/.test(text)) {
-            return "This website itself is a project! It's a personal portfolio built with HTML, CSS, JavaScript, and React components to showcase projects and resume data. It is responsive, highly performant, and integrated with this custom AI clone chatbot.";
-        }
-
-        if (/project|projects|what did you build|list|portfolio/.test(text)) {
-            return "Harsh has built several impressive projects:\n\n" +
-                   "1️⃣ FitByte - AI Health & Diet Mobile App (Flutter/Firebase)\n" +
-                   "2️⃣ MentEra - AI Career Advisor (ML/Python/React)\n" +
-                   "3️⃣ Cafe Sales Data Analysis (Pandas/Matplotlib/Power BI)\n" +
-                   "4️⃣ Bike Sales Data Analysis (Python/EDA)\n" +
-                   "5️⃣ Smart Home Analytics System (IoT/Cloud)\n\n" +
-                   "Check the Projects page to explore case studies and code links!";
-        }
-
-        return "I'm not sure I understand that question completely. I can tell you about Harsh's skills, projects (like FitByte, MentEra), education, certifications, and contact details. Try asking about one of those topics or click one of the quick suggestions below!";
+        // DEFAULT FALLBACK
+        return "I can answer anything about Harsh's **projects** (FitByte, Career Adviser, Cafe Sales), **skills** (Python, SQL, ML, Power BI, Flutter), **education** (SRMCEM, CGPA 7.08), **certifications**, or **contact info**. Try tapping one of the suggested buttons below!";
     };
 
     if (chatToggle && chatWindow && chatClose && chatMessages && chatInput && chatSend) {
-        const addMessage = (text, className) => {
-            const message = document.createElement('div');
-            message.className = `message ${className}`;
-            
-            // Format newline into <br> tags
-            message.innerHTML = text.replace(/\n/g, '<br>');
-            
-            chatMessages.appendChild(message);
+        const renderMarkdown = (rawText) => {
+            // Convert bold **text** to <strong>
+            let formatted = rawText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            // Convert bullet lines
+            formatted = formatted.replace(/^• (.*$)/gim, '<span style="display:block; margin: 3px 0 3px 14px; position: relative;">• $1</span>');
+            // Convert markdown links [text](url)
+            formatted = formatted.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color: var(--secondary-light); text-decoration: underline;">$1</a>');
+            // Convert newlines
+            formatted = formatted.replace(/\n/g, '<br>');
+            return formatted;
+        };
+
+        const appendChatMessage = (content, senderClass) => {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `message ${senderClass}`;
+            msgDiv.innerHTML = renderMarkdown(content);
+            chatMessages.appendChild(msgDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         };
 
-        const setSendingState = (isSending) => {
-            chatSend.disabled = isSending;
-            chatInput.disabled = isSending;
-            chatSend.style.opacity = isSending ? '0.6' : '1';
-        };
+        const handleSend = (textOverride) => {
+            const query = textOverride || chatInput.value.trim();
+            if (!query) return;
 
-        const sendChat = (messageText) => {
-            const userText = messageText || chatInput.value.trim();
-            if (!userText) return;
-
-            addMessage(userText, 'user-message');
+            appendChatMessage(query, 'user-message');
             chatInput.value = '';
-            setSendingState(true);
 
-            // Add typing indicator
-            const typingMessage = document.createElement('div');
-            typingMessage.className = 'message ai-message';
-            typingMessage.innerHTML = '<span class="typing-dots">Typing<em>.</em><em>.</em><em>.</em></span>';
-            chatMessages.appendChild(typingMessage);
+            // Typing indicator
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message ai-message';
+            typingDiv.innerHTML = '<span style="opacity: 0.7; font-style: italic;">Harsh AI is thinking...</span>';
+            chatMessages.appendChild(typingDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            chatSend.disabled = true;
 
             setTimeout(() => {
-                // Remove typing indicator and reply
-                typingMessage.remove();
-                const reply = getLocalAIResponse(userText);
-                addMessage(reply, 'ai-message');
-                setSendingState(false);
-            }, 600);
+                typingDiv.remove();
+                const reply = getHarshAIResponse(query);
+                appendChatMessage(reply, 'ai-message');
+                chatSend.disabled = false;
+                chatInput.focus();
+            }, 450);
         };
 
-        const toggleChatWindow = () => {
+        const toggleChat = () => {
             const isHidden = chatWindow.classList.contains('hidden-chat');
             chatWindow.classList.toggle('hidden-chat', !isHidden);
             chatWindow.setAttribute('aria-hidden', String(!isHidden));
@@ -253,52 +399,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        chatToggle.addEventListener('click', toggleChatWindow);
-        chatClose.addEventListener('click', toggleChatWindow);
-        
-        chatSend.addEventListener('click', () => {
-            sendChat();
-        });
-        
-        chatInput.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter') {
-                event.preventDefault();
-                sendChat();
+        chatToggle.addEventListener('click', toggleChat);
+        chatClose.addEventListener('click', toggleChat);
+
+        chatSend.addEventListener('click', () => handleSend());
+        chatInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                handleSend();
             }
         });
 
-        // Setup Suggestion Chips click triggers
         suggestionChips.forEach(chip => {
             chip.addEventListener('click', () => {
-                const queryText = chip.getAttribute('data-query');
-                if (queryText) {
-                    sendChat(queryText);
-                }
+                const query = chip.getAttribute('data-query');
+                if (query) handleSend(query);
             });
         });
     }
-
-    // --- Projects Category Filtering ---
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectItems = document.querySelectorAll('.project-item');
-
-    if (filterButtons.length > 0 && projectItems.length > 0) {
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                const category = button.getAttribute('data-filter');
-
-                projectItems.forEach(item => {
-                    const itemCategory = item.getAttribute('data-category');
-                    if (category === 'all' || itemCategory === category) {
-                        item.classList.remove('filtered-out');
-                    } else {
-                        item.classList.add('filtered-out');
-                    }
-                });
-            });
-        });
-    }
-});
+});

@@ -3,172 +3,583 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harsh Upadhyay | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Harsh Upadhyay - Final-Year B.Tech Data Science Student at AKTU (SRMCEM, 2027). Aspiring Data Analyst & Machine Learning Engineer with shipped projects in Flutter, ML, and Power BI.">
+    <meta name="keywords" content="Harsh Upadhyay, Data Science, Machine Learning Engineer, Data Analyst, Flutter, Power BI, Python, AKTU, SRMCEM">
+    <meta name="author" content="Harsh Upadhyay">
+    <title>Harsh Upadhyay | Data Science & AI Engineer Portfolio</title>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Interactive Background Particles -->
+    <div id="particles-js"></div>
 
-    <header>
-        <nav>
-            <a href="#home" class="logo">Harsh Upadhyay</a>
-            <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li> 
-            </ul>
-        </nav>
-    </header>
+    <div class="page-wrapper">
+        <!-- Site Header & Navigation -->
+        <header class="site-header">
+            <div class="container nav-container">
+                <a href="index.html" class="logo" aria-label="Harsh Upadhyay Homepage">
+                    <span class="logo-badge">HU</span>
+                    <span>Harsh Upadhyay</span>
+                </a>
+                
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
 
-    <main>
-        <section id="home" class="hero">
-            <div id="particles-js"></div>
-            <div class="hero-text">
-                <h1>Hi, I'm <span class="name">Harsh Upadhyay</span></h1>
-                <p>I'm a <span id="typed-text"></span></p>
-                <a href="#about" class="btn">Discover More <i class="fas fa-arrow-right"></i></a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="skill.html">Skills</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <a href="contact.html" class="nav-cta-btn">
+                            <i class="fas fa-paper-plane"></i> Let's Talk
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </section>
+        </header>
 
-        <section id="about" class="hidden">
-            <div class="about-container">
-                <div class="about-image">
-                    <img src="harsh1.jpg" alt="Harsh Upadhyay">
-                </div>
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>
-                        Hello! I'm Harsh, a creative and results-driven student with a deep passion for technology. My goal is to build beautiful, functional, and impactful digital solutions. I specialize in full-stack development and am particularly interested in the fields of machine learning and data analysis.
-                    </p>
-                    <p>
-                        My journey at <strong>Shri Ramswaroop Memorial College of Engineering</strong> and my experience competing in the <strong>Smart India Hackathon</strong> have equipped me with a strong blend of theoretical knowledge and practical skills. I thrive on turning complex challenges into elegant, user-friendly experiences.
-                    </p>
-                    
-                    <div class="about-stats-grid">
-                        <div class="stat-card">
-                            <i class="fas fa-graduation-cap"></i>
-                            <div class="stat-info">
-                                <h4>B.Tech CSE (DS)</h4>
-                                <p>Candidate (2023 - 2027)</p>
-                            </div>
+        <main>
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container hero-grid">
+                    <div class="hero-content reveal">
+                        <div class="hero-status-pill">
+                            <span class="pulse-dot"></span>
+                            <span>Seeking Data Analyst & ML Engineer Roles</span>
                         </div>
-                        <div class="stat-card">
-                            <i class="fas fa-trophy"></i>
-                            <div class="stat-info">
-                                <h4>SIH 2025</h4>
-                                <p>National Participant</p>
-                            </div>
+
+                        <h1 class="hero-title">
+                            Hi, I'm <span class="gradient-text">Harsh Upadhyay</span>
+                        </h1>
+
+                        <div class="hero-tagline">
+                            Turning <span id="typed-text" class="typed-text-highlight"></span>
                         </div>
-                        <div class="stat-card">
-                            <i class="fas fa-laptop-code"></i>
-                            <div class="stat-info">
-                                <h4>5+ Projects</h4>
-                                <p>AI, Web & Analytics</p>
-                            </div>
+
+                        <p class="hero-description">
+                            Final-year B.Tech Data Science student at <strong>SRMCEM, AKTU</strong> (graduating 2027) with a track record of shipping end-to-end data and AI projects: an AI-driven Flutter health app, an 85% accurate career recommendation engine on 1,200+ profiles, and Power BI dashboards reducing wastage by 15% across 10,000+ transactions.
+                        </p>
+
+                        <div class="hero-actions">
+                            <a href="projects.html" class="btn btn-primary">
+                                <i class="fas fa-rocket"></i> View Featured Projects
+                            </a>
+                            <a href="Harsh_Upadhyay_Resume.pdf" class="btn btn-secondary" download>
+                                <i class="fas fa-download"></i> Download Resume
+                            </a>
+                            <a href="resume.html" class="btn btn-outline">
+                                <i class="fas fa-file-alt"></i> View Full CV
+                            </a>
                         </div>
-                        <div class="stat-card">
-                            <i class="fas fa-tools"></i>
-                            <div class="stat-info">
-                                <h4>19+ Tech Skills</h4>
-                                <p>Modern Stack Arsenal</p>
+
+                        <!-- Metrics Highlight Strip -->
+                        <div class="metrics-strip">
+                            <div class="metric-item">
+                                <span class="metric-number">~85%</span>
+                                <span class="metric-label">ML Accuracy</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-number">1,200+</span>
+                                <span class="metric-label">Profiles Trained</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-number">10k+</span>
+                                <span class="metric-label">Sales Analyzed</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-number">7.08</span>
+                                <span class="metric-label">B.Tech CGPA</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="about-buttons">
-                         <a href="about.html" class="btn">Learn More</a>
-                         <a href="resume.html" class="btn secondary">View Resume</a>
+                    <!-- Hero Visual Frame with Photo & Floating Badges -->
+                    <div class="hero-visual reveal">
+                        <div class="hero-card-frame">
+                            <div class="hero-card-inner">
+                                <img src="harsh1.jpg" alt="Harsh Upadhyay - Data Science Engineer" class="hero-img">
+                            </div>
+
+                            <!-- Floating Badge 1 -->
+                            <div class="floating-badge badge-top">
+                                <div class="floating-badge-icon purple">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="floating-badge-text">
+                                    <strong>B.Tech Data Science</strong>
+                                    <span>SRMCEM, AKTU (2023-2027)</span>
+                                </div>
+                            </div>
+
+                            <!-- Floating Badge 2 -->
+                            <div class="floating-badge badge-bottom">
+                                <div class="floating-badge-icon cyan">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div class="floating-badge-text">
+                                    <strong>Smart India Hackathon</strong>
+                                    <span>SIH 2025 Innovation Project</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </section>
+
+            <!-- What I Do / Core Domains -->
+            <section id="services" class="reveal">
+                <div class="container">
+                    <div class="section-header-center">
+                        <span class="section-tag"><i class="fas fa-layer-group"></i> My Core Expertise</span>
+                        <h2 class="section-title">Bridging Data Science, AI & Engineering</h2>
+                        <p class="section-subtitle">Delivering full-cycle engineering from data cleaning and statistical modeling to interactive dashboards and cross-platform apps.</p>
+                    </div>
+
+                    <div class="services-grid">
+                        <div class="glass-card service-card">
+                            <div class="service-icon-box">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Machine Learning & AI</h3>
+                            <p>Developing predictive models, gradient boosting ensembles, real-time computer vision, and clustering. Experience with XGBoost, OpenCV, MediaPipe, and LLM APIs.</p>
+                            <ul class="service-skills-tags">
+                                <li>Scikit-learn</li>
+                                <li>XGBoost</li>
+                                <li>OpenCV & MediaPipe</li>
+                                <li>ChatGPT API</li>
+                                <li>SHAP (XAI)</li>
+                            </ul>
+                        </div>
+
+                        <div class="glass-card service-card">
+                            <div class="service-icon-box">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Data Analytics & BI</h3>
+                            <p>Transforming complex datasets into actionable executive insights with exploratory data analysis, KPI reporting, and interactive Power BI and Tableau dashboards.</p>
+                            <ul class="service-skills-tags">
+                                <li>Pandas</li>
+                                <li>Power BI</li>
+                                <li>Tableau</li>
+                                <li>Advanced Excel</li>
+                                <li>SQL</li>
+                            </ul>
+                        </div>
+
+                        <div class="glass-card service-card">
+                            <div class="service-icon-box">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Mobile App Development</h3>
+                            <p>Building high-performance cross-platform Android mobile applications using Flutter and Dart, with real-time REST API integration and Firebase cloud authentication.</p>
+                            <ul class="service-skills-tags">
+                                <li>Flutter</li>
+                                <li>Dart</li>
+                                <li>Firebase</li>
+                                <li>REST APIs</li>
+                                <li>Android Studio</li>
+                            </ul>
+                        </div>
+
+                        <div class="glass-card service-card">
+                            <div class="service-icon-box">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>Full-Stack & Web Dev</h3>
+                            <p>Creating responsive, modern web applications and interactive client experiences using HTML5, CSS3, modern JavaScript, and React with GitHub Pages deployment.</p>
+                            <ul class="service-skills-tags">
+                                <li>React</li>
+                                <li>JavaScript</li>
+                                <li>HTML5 / CSS3</li>
+                                <li>Git & GitHub</li>
+                                <li>Figma UI/UX</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Projects Highlight -->
+            <section id="featured-projects" class="reveal">
+                <div class="container">
+                    <div class="section-header-center">
+                        <span class="section-tag"><i class="fas fa-briefcase"></i> Real-World Impact</span>
+                        <h2 class="section-title">Featured Projects</h2>
+                        <p class="section-subtitle">Handcrafted applications and data pipelines that solve measurable business problems.</p>
+                    </div>
+
+                    <div class="projects-list">
+                        <!-- Project: GazeFlow AI -->
+                        <div class="project-item">
+                            <div class="project-media">
+                                <span class="project-category-badge">Computer Vision & AI</span>
+                                <img src="gazeflow_preview.jpg" alt="GazeFlow AI Eye Tracking Interface Preview">
+                            </div>
+                            <div class="project-info">
+                                <div class="project-header-row">
+                                    <h3 class="project-title">GazeFlow AI — Real-Time Eye & Gaze Tracking</h3>
+                                    <span class="project-date">2026</span>
+                                </div>
+
+                                <div class="project-metrics-grid">
+                                    <span class="project-metric-pill"><i class="fas fa-bolt"></i> Real-Time 60 FPS</span>
+                                    <span class="project-metric-pill"><i class="fas fa-eye"></i> MediaPipe Landmarker</span>
+                                    <span class="project-metric-pill"><i class="fas fa-microchip"></i> Zero-Latency Pipeline</span>
+                                </div>
+
+                                <ul class="project-bullets">
+                                    <li>Engineered an AI-powered computer vision desktop application using Python, OpenCV, and Google MediaPipe Face Landmarker for real-time facial landmarking, iris centering, and ocular gaze vector computation.</li>
+                                    <li>Architected a multithreaded desktop UI using PyQt/PySide with real-time 60 FPS webcam ingestion, mirrored ocular telemetry feedback, and safe camera resource cleanup on disconnects.</li>
+                                </ul>
+
+                                <ul class="tech-stack-pills">
+                                    <li><i class="fab fa-python"></i> Python</li>
+                                    <li><i class="fas fa-camera"></i> OpenCV</li>
+                                    <li><i class="fas fa-project-diagram"></i> MediaPipe</li>
+                                    <li><i class="fas fa-desktop"></i> PyQt / PySide</li>
+                                </div>
+
+                                <div class="project-links">
+                                    <a href="https://github.com/harshupadhyay750/GazeFlow_AI" target="_blank" class="btn btn-sm btn-primary">
+                                        <i class="fab fa-github"></i> GitHub Repo
+                                    </a>
+                                    <a href="projects.html" class="btn btn-sm btn-secondary">
+                                        <i class="fas fa-info-circle"></i> View Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project: PropIntel House Price Prediction -->
+                        <div class="project-item">
+                            <div class="project-media">
+                                <span class="project-category-badge">ML & Property Analytics</span>
+                                <img src="house_prediction_preview.jpg" alt="PropIntel House Price Prediction Dashboard Preview">
+                            </div>
+                            <div class="project-info">
+                                <div class="project-header-row">
+                                    <h3 class="project-title">PropIntel — House Price Prediction & Analytics</h3>
+                                    <span class="project-date">2025 - 2026</span>
+                                </div>
+
+                                <div class="project-metrics-grid">
+                                    <span class="project-metric-pill"><i class="fas fa-bullseye"></i> 98.83% R² Accuracy</span>
+                                    <span class="project-metric-pill"><i class="fas fa-home"></i> 6,025 Properties</span>
+                                    <span class="project-metric-pill"><i class="fas fa-server"></i> FastAPI & Streamlit</span>
+                                </div>
+
+                                <ul class="project-bullets">
+                                    <li>Architected an end-to-end Machine Learning property valuation platform achieving 98.83% R² accuracy ($21,290 MAE / 4.10% MAPE) across 6,025 real estate properties using a log-target Super Ensemble (XGBoost, GradientBoosting, HistGradientBoosting).</li>
+                                    <li>Engineered an automated leakage-free Scikit-learn Pipeline with ColumnTransformer, domain feature engineering, Tree SHAP explainability, and multi-currency valuation conversion.</li>
+                                </ul>
+
+                                <ul class="tech-stack-pills">
+                                    <li><i class="fab fa-python"></i> Python</li>
+                                    <li><i class="fas fa-brain"></i> XGBoost</li>
+                                    <li><i class="fas fa-cogs"></i> Scikit-learn</li>
+                                    <li><i class="fas fa-server"></i> FastAPI</li>
+                                    <li><i class="fas fa-chart-line"></i> Streamlit</li>
+                                </div>
+
+                                <div class="project-links">
+                                    <a href="https://github.com/harshupadhyay750/House_Prediction" target="_blank" class="btn btn-sm btn-primary">
+                                        <i class="fab fa-github"></i> GitHub Repo
+                                    </a>
+                                    <a href="projects.html" class="btn btn-sm btn-secondary">
+                                        <i class="fas fa-info-circle"></i> View Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 1: FitByte -->
+                        <div class="project-item">
+                            <div class="project-media">
+                                <span class="project-category-badge">Mobile & AI</span>
+                                <img src="fitbyte_preview.jpg" alt="FitByte AI Health App Preview">
+                            </div>
+                            <div class="project-info">
+                                <div class="project-header-row">
+                                    <h3 class="project-title">FitByte — AI Health & Diet Analyzer</h3>
+                                    <span class="project-date">Jun 2026 - Present</span>
+                                </div>
+
+                                <div class="project-metrics-grid">
+                                    <span class="project-metric-pill"><i class="fas fa-users"></i> 15+ Beta Testers</span>
+                                    <span class="project-metric-pill"><i class="fas fa-utensils"></i> 500+ Food Items</span>
+                                    <span class="project-metric-pill"><i class="fas fa-bolt"></i> ~80% Less Logging</span>
+                                </div>
+
+                                <ul class="project-bullets">
+                                    <li>Built a cross-platform Android application using Flutter and Dart that analyzes user health data (age, weight, activity level) and delivers personalized AI-driven diet recommendations across 500+ food items.</li>
+                                    <li>Integrated REST APIs for real-time nutritional data and connected Firebase for authentication and cloud-synced progress tracking.</li>
+                                    <li>Designed an interactive dashboard with dynamic charts for calorie, macro, and weekly fitness visualization; validated with 15+ beta testers using Figma UI/UX prototyping.</li>
+                                </ul>
+
+                                <ul class="tech-stack-pills">
+                                    <li><i class="fas fa-mobile-alt"></i> Flutter</li>
+                                    <li><i class="fas fa-code"></i> Dart</li>
+                                    <li><i class="fab fa-google"></i> Firebase</li>
+                                    <li><i class="fas fa-plug"></i> REST API</li>
+                                    <li><i class="fab fa-figma"></i> Figma</li>
+                                </ul>
+
+                                <div class="project-links">
+                                    <a href="https://github.com/harshupadhyay750" target="_blank" class="btn btn-sm btn-primary">
+                                        <i class="fab fa-github"></i> View GitHub Repo
+                                    </a>
+                                    <a href="projects.html" class="btn btn-sm btn-secondary">
+                                        <i class="fas fa-info-circle"></i> Learn More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2: Personalized Career Adviser System -->
+                        <div class="project-item">
+                            <div class="project-media">
+                                <span class="project-category-badge">Machine Learning & AI</span>
+                                <img src="career_adviser_preview.jpg" alt="Career Adviser Dashboard Preview">
+                            </div>
+                            <div class="project-info">
+                                <div class="project-header-row">
+                                    <h3 class="project-title">Personalized Career Adviser System</h3>
+                                    <span class="project-date">Sep 2025 - Nov 2025</span>
+                                </div>
+
+                                <div class="project-metrics-grid">
+                                    <span class="project-metric-pill"><i class="fas fa-check-circle"></i> ~85% Accuracy</span>
+                                    <span class="project-metric-pill"><i class="fas fa-graduation-cap"></i> 1,200+ Student Profiles</span>
+                                    <span class="project-metric-pill"><i class="fas fa-trophy"></i> SIH 2025 Project</span>
+                                </div>
+
+                                <ul class="project-bullets">
+                                    <li>Built a career recommendation system trained on 1,200+ student profiles using decision trees, K-means clustering, and collaborative filtering, achieving approximately 85% accuracy on test data.</li>
+                                    <li>Integrated the ChatGPT API to generate personalized learning roadmaps based on skill-gap analysis, building an end-to-end pipeline with Python and Scikit-learn.</li>
+                                </ul>
+
+                                <ul class="tech-stack-pills">
+                                    <li><i class="fab fa-python"></i> Python</li>
+                                    <li><i class="fas fa-brain"></i> Scikit-learn</li>
+                                    <li><i class="fas fa-robot"></i> ChatGPT API</li>
+                                    <li><i class="fab fa-react"></i> React</li>
+                                    <li><i class="fab fa-node-js"></i> Node.js</li>
+                                </ul>
+
+                                <div class="project-links">
+                                    <a href="MentEra_SIH_2025.pdf" target="_blank" class="btn btn-sm btn-primary">
+                                        <i class="fas fa-file-pdf"></i> Read SIH Case Study
+                                    </a>
+                                    <a href="https://github.com/harshupadhyay750" target="_blank" class="btn btn-sm btn-secondary">
+                                        <i class="fab fa-github"></i> Repository
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3: Cafe Sales Data Analysis -->
+                        <div class="project-item">
+                            <div class="project-media">
+                                <span class="project-category-badge">Data & Analytics</span>
+                                <img src="cafe_sales_preview.jpg" alt="Cafe Sales Power BI Dashboard Preview">
+                            </div>
+                            <div class="project-info">
+                                <div class="project-header-row">
+                                    <h3 class="project-title">Cafe Sales Data Analysis</h3>
+                                    <span class="project-date">Jun 2025</span>
+                                </div>
+
+                                <div class="project-metrics-grid">
+                                    <span class="project-metric-pill"><i class="fas fa-receipt"></i> 10,000+ Transactions</span>
+                                    <span class="project-metric-pill"><i class="fas fa-arrow-down"></i> 15% Wastage Reduction</span>
+                                    <span class="project-metric-pill"><i class="fas fa-chart-pie"></i> Power BI KPIs</span>
+                                </div>
+
+                                <ul class="project-bullets">
+                                    <li>Analyzed 10,000+ sales transactions across 6 months, identifying 3 peak revenue periods and top-selling SKUs, contributing to a 15% reduction in estimated wastage.</li>
+                                    <li>Built an interactive Power BI dashboard consolidating KPIs across customer behavior, revenue trends, and product performance for management reporting.</li>
+                                </ul>
+
+                                <ul class="tech-stack-pills">
+                                    <li><i class="fab fa-python"></i> Python</li>
+                                    <li><i class="fas fa-table"></i> Pandas</li>
+                                    <li><i class="fas fa-chart-bar"></i> Matplotlib</li>
+                                    <li><i class="fas fa-chart-line"></i> Power BI</li>
+                                </ul>
+
+                                <div class="project-links">
+                                    <a href="https://github.com/harshupadhyay750" target="_blank" class="btn btn-sm btn-primary">
+                                        <i class="fab fa-github"></i> View Analysis Code
+                                    </a>
+                                    <a href="projects.html" class="btn btn-sm btn-secondary">
+                                        <i class="fas fa-arrow-right"></i> Explore All Projects
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 50px;">
+                        <a href="projects.html" class="btn btn-secondary">
+                            <span>View All Projects & Case Studies</span> <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications Showcase Strip -->
+            <section class="reveal" style="padding: 60px 0;">
+                <div class="container">
+                    <div class="section-header-center" style="margin-bottom: 35px;">
+                        <span class="section-tag"><i class="fas fa-certificate"></i> Verified Credentials</span>
+                        <h2 class="section-title">Certifications</h2>
+                    </div>
+
+                    <div class="cert-grid">
+                        <div class="cert-card">
+                            <div class="cert-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h4>Data Science with Machine Learning</h4>
+                                <p>SRDT Certification</p>
+                            </div>
+                        </div>
+
+                        <div class="cert-card">
+                            <div class="cert-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h4>Machine Learning Fundamentals</h4>
+                                <p>Comprehensive Online Certification</p>
+                            </div>
+                        </div>
+
+                        <div class="cert-card">
+                            <div class="cert-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h4>Python for Data Analysis</h4>
+                                <p>Data Analytics & Pandas Certification</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action Banner -->
+            <section class="reveal">
+                <div class="container">
+                    <div class="glass-card" style="text-align: center; padding: 60px 30px; border-color: rgba(168, 85, 247, 0.35); box-shadow: 0 0 50px rgba(168, 85, 247, 0.15);">
+                        <span class="section-tag"><i class="fas fa-handshake"></i> Open to Opportunities</span>
+                        <h2 style="margin-bottom: 16px;">Let's Build Something Exceptional Together</h2>
+                        <p style="max-width: 620px; margin: 0 auto 30px auto;">
+                            Whether you have an open position for a <strong>Data Analyst</strong> or <strong>Machine Learning Engineer</strong>, a collaboration idea, or an app to build, I'm ready to bring value to your team.
+                        </p>
+                        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                            <a href="contact.html" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Contact Harsh
+                            </a>
+                            <a href="mailto:harshupadhysy750@gmail.com" class="btn btn-secondary">
+                                <i class="fas fa-envelope"></i> harshupadhysy750@gmail.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-socials">
+                    <a href="https://github.com/harshupadhyay750" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/harsh-upadhyay-802049297" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:harshupadhysy750@gmail.com" class="footer-social-link" aria-label="Email Harsh">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.instagram.com/harsh_upadhyay__" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram Profile">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <p class="footer-copy">
+                    &copy; 2026 Harsh Upadhyay. All rights reserved. • B.Tech Data Science (AKTU, SRMCEM)
+                </p>
             </div>
-        </section>
+        </footer>
+    </div>
 
-        <section id="services" class="hidden">
-            <h2>What I Do</h2>
-            <div class="card-navigation-grid">
-                <div class="nav-card">
-                    <div class="card-content">
-                        <i class="fas fa-code"></i>
-                        <h3>Web Development</h3>
-                        <p>I build responsive, high-performance websites using modern technologies like HTML5, CSS3, and JavaScript.</p>
-                    </div>
-                </div>
-                <div class="nav-card">
-                    <div class="card-content">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Data Analysis</h3>
-                        <p>Using Python libraries like Pandas and NumPy, I analyze complex datasets to extract meaningful insights and trends.</p>
-                    </div>
-                </div>
-                <div class="nav-card">
-                     <div class="card-content">
-                        <i class="fas fa-brain"></i>
-                        <h3>Machine Learning</h3>
-                        <p>I implement machine learning models with Scikit-learn and TensorFlow to create intelligent, data-driven applications.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="hidden">
-            <h2>Get In Touch</h2>
-            <p>I'm currently seeking new opportunities and collaborations. My inbox is always open, whether you have a question or just want to say hi, I'll get back to you!</p>
-            <a href="mailto:harshupadhyay750@gmail.com" class="btn">Say Hello <i class="fas fa-paper-plane"></i></a>
-        </section>
-    </main>
-
-    <footer>
-        <div class="social-links">
-            <a href="https://github.com/harshupadhyay750" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/harsh-upadhyay-802049297" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/harsh_upadhyay__" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-        <p>&copy; 2026 by Harsh Upadhyay. All rights reserved.</p>
-    </footer>
-
-    <!-- AI Assistant Floating UI -->
+    <!-- AI Assistant Floating Widget -->
     <div class="ai-chat-widget">
-        <button id="chat-toggle" class="chat-toggle-btn">
+        <button id="chat-toggle" class="chat-toggle-btn" aria-label="Open Harsh's AI assistant">
             <i class="fas fa-robot"></i> Ask AI Harsh
         </button>
+
         <div id="chat-window" class="chat-window hidden-chat" aria-hidden="true">
             <div class="chat-header">
                 <div class="chat-header-info">
-                    <i class="fas fa-robot"></i>
-                    <strong>Harsh's AI Clone</strong>
+                    <div class="chat-bot-avatar">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="chat-header-text">
+                        <strong>Harsh's AI Clone</strong>
+                        <span>Online • Resume Knowledge v2026</span>
+                    </div>
                 </div>
-                <button id="chat-close" class="close-btn" aria-label="Close chat">
+                <button id="chat-close" class="close-btn" aria-label="Close AI chat">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
+
             <div id="chat-messages" class="chat-messages">
-                <div class="message ai-message">Hi! I'm Harsh's personal AI clone. Ask me about my projects, skills, certifications, or contact info.</div>
+                <div class="message ai-message">
+                    Hi! I'm <strong>Harsh's AI clone</strong>. I'm trained on his resume, projects (GazeFlow AI, PropIntel Valuation, FitByte, MentEra), B.Tech Data Science coursework, and skills. What would you like to know?
+                </div>
             </div>
+
             <div class="suggestion-chips-container">
                 <div class="suggestion-chips-title">Suggested Topics</div>
                 <div class="suggestion-chips">
-                    <button class="chip" data-query="Tell me about FitByte project">FitByte App</button>
-                    <button class="chip" data-query="What is the MentEra Career Advisor?">MentEra AI</button>
-                    <button class="chip" data-query="What skills do you have?">Technical Skills</button>
-                    <button class="chip" data-query="Show me your certifications">Certifications</button>
+                    <button class="chip" data-query="Tell me about GazeFlow AI">GazeFlow AI</button>
+                    <button class="chip" data-query="Tell me about the House Price Prediction project">PropIntel AI</button>
+                    <button class="chip" data-query="Tell me about the FitByte project">FitByte App</button>
+                    <button class="chip" data-query="What is the Career Adviser System?">Career Adviser AI</button>
+                    <button class="chip" data-query="What technical skills do you have?">Technical Skills</button>
+                    <button class="chip" data-query="What is your education and CGPA?">Education & CGPA</button>
                     <button class="chip" data-query="How can I contact you?">Contact Info</button>
-                    <button class="chip" data-query="Tell me about your education">Education</button>
                 </div>
             </div>
+
             <div class="chat-input-area">
-                <input id="chat-input" type="text" placeholder="Ask me something..." aria-label="Chat input">
-                <button id="chat-send" aria-label="Send message">
+                <input id="chat-input" type="text" placeholder="Ask about Harsh's work..." aria-label="Chat input query">
+                <button id="chat-send" aria-label="Send message to AI">
                     <i class="fas fa-paper-plane"></i>
                 </button>
             </div>
         </div>
     </div>
-    
+
+    <!-- External Libraries -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="script.js"></script>
